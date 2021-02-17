@@ -15,8 +15,7 @@
 .d-flex {display: flex;}
 .d-grid {display: grid;}
 
-*[class^="grid-"], *[class*=" grid-"],
-*[class^="autogrid-"], *[class*=" autogrid-"] {
+[class*="grid-"] {
     display: grid;
     border-radius: $border-radius;
     column-gap: $gap-x;
@@ -36,17 +35,19 @@
     }
 }
 
-*[class^="col-"], *[class*=" col-"] {
+*[class*="col-"] {
     padding: $padding-col;
     border-radius: $border-radius;
 }
 
 @for $i from 1 through $nb_columns_max {
-    .container .autogrid-#{$i} {
-        grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl)*$container_width_coef - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
-    }
-    .container-fluid .autogrid-#{$i} {
-        grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl) - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
+    .container {
+        & .autogrid-#{$i} {
+            grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl)*$container_width_coef - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
+        }
+        &-fluid .autogrid-#{$i} {
+            grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl) - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
+        }
     }
     .grid-#{$i} {
         grid-template-columns: repeat($i, 1fr);
@@ -54,10 +55,8 @@
     .col-#{$i} {
         grid-column: auto / span $i;
     }
-    *[class^="grid-"], *[class*=" grid-"] {
-        & > .start-#{$i} {
-            grid-column-start: $i;
-        }
+    *[class*="grid-"] > .start-#{$i} {
+        grid-column-start: $i;
     }
 }
 
@@ -74,10 +73,8 @@
             .col-#{$grid-breakpoint}-#{$i} {
                 grid-column: auto / span $i;
             }
-            *[class^="grid-"], *[class*=" grid-"] {
-                & > .start-#{$grid-breakpoint}-#{$i} {
-                    grid-column-start: $i;
-                }
+            *[class*="grid-"] > .start-#{$grid-breakpoint}-#{$i} {
+                grid-column-start: $i;
             }
         }
     }
@@ -91,11 +88,8 @@
     .g-#{$i}, .gy-#{$i} {
         row-gap: map-get($gutters , $i );
     }
-    .rounded-#{$i} {
+    body *.rounded-#{$i}, .rounded-#{$i} * {
         border-radius: map-get($gutters, $i);
-        & * {
-            @extend .rounded-#{$i};
-        }
     }
 }
-.rounded-circle, .rounded-circle * {border-radius: 50%;}
+body *.rounded-circle, .rounded-circle * {border-radius: 50%;}

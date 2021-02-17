@@ -10,13 +10,15 @@
             @include background($color_code);
         }
 
-        body button.#{$color_name}, .#{$color_name} button {
-            @include background($color_code);
-            &:hover {
-                @include background(darken($color_code,10%));
-            }
-            &:focus {
-                @include form_focus($color_code);
+        button {
+            body &.#{$color_name}, .#{$color_name} & {
+                @include background($color_code);
+                &:hover {
+                    @include background(darken($color_code,10%));
+                }
+                &:focus {
+                    @include form_focus($color_code);
+                }
             }
         }
     }

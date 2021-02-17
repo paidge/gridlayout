@@ -3,6 +3,12 @@
 // Author: Darlan Rod https://github.com/darlanrod
 // Version 1.5.2
 // MIT License
+%track {
+  cursor: default;
+  height: $track-height;
+  transition: all .2s ease;
+  width: $track-width;
+}
 
 [type='range'] {
   appearance: none;
@@ -40,10 +46,8 @@
   }
 
   &::-webkit-slider-runnable-track {
-    @include track;
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: $track-radius;
+    @extend %track;
+    @include track_shape($track-color,$track-border-width,$track-border-color,$track-radius);
   }
 
   &::-webkit-slider-thumb {
@@ -53,10 +57,8 @@
   }
 
   &::-moz-range-track {
-    @include track;
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: $track-radius;
+    @extend %track;
+    @include track_shape($track-color,$track-border-width,$track-border-color,$track-radius);
     height: $track-height / 2;
   }
 
@@ -65,7 +67,7 @@
   }
 
   &::-ms-track {
-    @include track;
+    @extend %track;
     background: transparent;
     border-color: transparent;
     border-width: ($thumb-height / 2) 0;
@@ -73,15 +75,11 @@
   }
 
   &::-ms-fill-lower {
-    background: $ie-bottom-track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: ($track-radius * 2);
+    @include track_shape($ie-bottom-track-color,$track-border-width,$track-border-color,$track-radius*2);
   }
 
   &::-ms-fill-upper {
-    background: $track-color;
-    border: $track-border-width solid $track-border-color;
-    border-radius: ($track-radius * 2);
+    @include track_shape($track-color,$track-border-width,$track-border-color,$track-radius*2);
   }
 
   &::-ms-thumb {
@@ -99,6 +97,12 @@
       cursor: not-allowed;
     }
   }
+}
+
+%form_control {
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 form {
@@ -134,27 +138,27 @@ input {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   &[type=checkbox], &[type=radio] {
-      width: 1em;
-      height: 1em;
-      vertical-align: top;
-      appearance: none;
-      border-radius: $border-radius;
-      margin-right: .5rem;
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+    appearance: none;
+    border-radius: $border-radius;
+    margin-right: .5rem;
   }
   &[type=radio] {
-      border-radius: 50%;
+    border-radius: 50%;
   }
   &:checked {
-      &[type=checkbox]{
-        background-color: $primary;
-        border-color: $primary;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
-      }
-      &[type=radio] {
-        background-color: $primary;
-        border-color: $primary;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
-      }
+    &[type=checkbox] {
+      background-color: $primary;
+      border-color: $primary;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    }
+    &[type=radio] {
+      background-color: $primary;
+      border-color: $primary;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    }
   }
 }
 
@@ -181,44 +185,51 @@ select {
   border-radius: $border-radius;
   appearance: none;
   &[multiple], &[size]:not([size="1"]) {
-      background-image: none;
+    background-image: none;
   }
 }
 
 // Colors
 @if $use_color_helpers {
   @each $color_name, $color_code in $colors {
-    body input:checked.#{$color_name}, .#{$color_name} input:checked, body .#{$color_name} > input:checked {
-      @include background($color_code);
-      border: 1px solid $color_code;
+    input:checked {
+      @include color_variant($color_name) {
+        @include background($color_code);
+        border: 1px solid $color_code;
+      }
     }
 
-    body input.#{$color_name}[type=range], .#{$color_name} input[type=range], body .#{$color_name} > input[type=range] {
-      &::-moz-range-thumb {
-        background-color: $color_code;
-      }
-      &::-webkit-slider-thumb {
-        background-color: $color_code;
-      }
-      &::-ms-thumb {
-        background-color: $color_code;
-      }
-      &:focus {
+    [type=range] {
+      @include color_variant($color_name) {
         &::-moz-range-thumb {
-          @include form_focus($color_code);
+          background-color: $color_code;
         }
         &::-webkit-slider-thumb {
-          @include form_focus($color_code);
+          background-color: $color_code;
         }
         &::-ms-thumb {
-          @include form_focus($color_code);
+          background-color: $color_code;
+        }
+        &:focus {
+          &::-moz-range-thumb {
+            @include form_focus($color_code);
+          }
+          &::-webkit-slider-thumb {
+            @include form_focus($color_code);
+          }
+          &::-ms-thumb {
+            @include form_focus($color_code);
+          }
         }
       }
     }
 
-    body input:not([type=range]):focus.#{$color_name}, .#{$color_name} input:not([type=range]):focus, body .#{$color_name} > input:not([type=range]):focus,
-    body select.#{$color_name}:focus, .#{$color_name} select:focus, body .#{$color_name} > select:focus {
-      @include form_focus($color_code);
+    input:not([type=range]), select {
+      @include color_variant($color_name) {
+        &:focus {
+          @include form_focus($color_code);
+        }
+      }
     }
   }
 }

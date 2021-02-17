@@ -7,11 +7,10 @@
 }
 
 /* Forms */
-@mixin track {
-  cursor: default;
-  height: $track-height;
-  transition: all .2s ease;
-  width: $track-width;
+@mixin track_shape ($color, $border-width, $border-color, $radius) {
+  background: $color;
+  border: $border-width solid $border-color;
+  border-radius: $radius;
 }
   
 @mixin thumb {
@@ -28,8 +27,8 @@
   box-shadow: 0 0 0 .25rem rgba(desaturate($color,10%),.25);
 }
 
-%form_control {
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
+@mixin color_variant($color_name) {
+  body &.#{$color_name}, .#{$color_name} &, body .#{$color_name} > & {
+    @content;
+  }
 }
