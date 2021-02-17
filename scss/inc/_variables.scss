@@ -1,0 +1,105 @@
+@import "_constants";
+
+$use_color_helpers : true !default;
+
+/* Grid */
+$container_width_coef : .95 !default;
+$nb_columns_max : 12 !default;
+$padding-grid : 16px !default;
+$padding-col : 12px !default;
+$gap: 16px !default;
+$gap-x : $gap !default;
+$gap-y : $gap !default;
+$border-radius : .25rem;
+$gutters : (
+  0: 0,
+  1: $gap * .25,
+  2: $gap * .5,
+  3: $gap,
+  4: $gap * 1.5,
+  5: $gap * 3,
+) !default;
+
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+/* Colors */
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+$primary: $blue !default;
+$secondary: $gray-400 !default;
+$light: $gray-100 !default;
+$dark: #111529 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "light":      $light,
+    "dark":       $dark,
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray-light": $gray-300,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800,
+    "black":      $black
+  ),
+  $colors
+);
+
+/* Fonts */
+$font-family: Arial, Helvetica, sans-serif !default;
+$font-light: $white !default;
+$font-dark: $black !default;
+
+/* Forms */
+$track-color: $gray-400 !default;
+$thumb-color: $primary !default;
+
+$thumb-radius: 12px !default;
+$thumb-height: 24px !default;
+$thumb-width: 24px !default;
+
+$track-width: 100% !default;
+$track-height: 16px !default;
+$track-border-width: 0 !default;
+$track-border-color: #cfd8dc !default;
+
+$track-radius: 5px !default;
+$contrast: 5% !default;
+
+$ie-bottom-track-color: darken($track-color, $contrast) !default;

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid_layout-full.min.css">
+    <title>Grid Layout test</title>
+    <style>
+        xmp {
+            border: 1px solid black;
+            border-radius: .5rem;
+            padding: 0 1rem;
+            white-space: pre-wrap;
+        }
+        section {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>Responsive Grid Layout with CSS Grid</h1>
+    <section class="grid-1 g-0">
+        <h2>Introduction</h2>
+        <p>Here is a light weight (66Ko or 24ko without color helpers) CSS library to theme and build responsive websites with CSS grid. You can customize and lighten it by modifying the Sass files.</p>
+        <p>By default, It uses the same breakpoints as Bootstrap.</p>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Class infix</th>
+                    <th>Dimensions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>X-Small</td>
+                    <td><em>None</em></td>
+                    <td>&lt;576px</td>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td><code>sm</code></td>
+                    <td>≥576px</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td><code>md</code></td>
+                    <td>≥768px</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td><code>lg</code></td>
+                    <td>≥992px</td>
+                </tr>
+                <tr>
+                    <td>Extra large</td>
+                    <td><code>xl</code></td>
+                    <td>≥1200px</td>
+                </tr>
+                <tr>
+                    <td>Extra extra large</td>
+                    <td><code>xxl</code></td>
+                    <td>≥1400px</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.container, .container-fluid</h2>
+        <p>Containers add horizontal padding. The fluid one takes 100% of the parent and the other sets a max-width at each responsive breakpoint (95% of the breakpoint value by default).</p>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.autogrid-*</h2>
+        <p>Responsive auto grid whose you can choose the number of the columns for the xxl resolution. The number of columns (max : 12 by default) is adjusted by the width of the parent. Here is an <b>.autogrid-5</b> :</p>
+        <div class="autogrid-5">
+            <div class="bg-black col-1 col-sm-2">Cell</div>
+            <div class="bg-blue col-1">Cell</div>
+            <div class="bg-cyan col-1">Cell</div>
+            <div class="bg-yellow col-1">Cell</div>
+            <div class="bg-orange col-1">Cell</div>
+            <div class="bg-red col-1">Cell</div>
+            <div class="bg-indigo col-1">Cell</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="autogrid-5">
+    <div class="bg-black col-1 col-sm-2">...</div>
+    <div class="bg-blue col-1">...</div>
+    <div class="bg-cyan col-1">...</div>
+    <div class="bg-yellow col-1">...</div>
+    <div class="bg-orange col-1">...</div>
+    <div class="bg-red col-1">...</div>
+    <div class="bg-indigo col-1">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.grid-*</h2>
+        <p>These classes determine the number of columns for the grid for each breakpoint. Here is a <b>.grid-2.grid-md-4</b> grid :</p>
+        <div class="grid-2 grid-md-4">
+            <div class="bg-black col-2 col-md-3">Cell</div>
+            <div class="bg-blue col-1">Cell</div>
+            <div class="bg-red col-1">Cell</div>
+            <div class="bg-gray col-1">Cell</div>
+            <div class="bg-yellow col-1">Cell</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-2 grid-md-4">
+    <div class="bg-black col-2 col-md-3">...</div>
+    <div class="bg-blue col-1">...</div>
+    <div class="bg-red col-1">...</div>
+    <div class="bg-gray col-1">...</div>
+    <div class="bg-yellow col-1">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.col-*</h2>
+        <p>These classes determine the width of the cells (how many columns) and add some padding and border-radius. Here is a complex example to show you different possibilities :</p>
+        <div class="grid-12">
+            <div class="bg-black col-sm-9 col-md-12 col-lg-6 col-xl-4 col-xxl-10 start-xxl-2">.col-sm-9.col-md-12.col-lg-6.col-xl-4.col-xxl-10.start-xxl-2</div>
+            <div class="bg-blue col-sm-6 col-md-4 col-lg-6 col-xl-8">.col-sm-6.col-md-4.col-lg-6.col-xl-8</div>
+            <div class="bg-red col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
+            <div class="bg-cyan col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
+            <div class="bg-gray col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-12">
+    <div class="bg-black col-sm-9 col-md-12 col-lg-6 col-xl-4 col-xxl-10 start-xxl-2">...</div>
+    <div class="bg-blue col-sm-6 col-md-4 col-lg-6 col-xl-8">...</div>
+    <div class="bg-red col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
+    <div class="bg-cyan col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
+    <div class="bg-gray col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.start-*</h2>
+        <p>With these classes, you can specify the start-column for a cell.</p>
+        <div class="grid-12">
+            <div class="bg-black col-3 start-1 start-sm-3 start-md-5 start-lg-7 start-xl-9">.start-1.start-sm-3.start-md-5.start-lg-7.start-xl-9</div>
+            <div class="bg-blue col-3 start-4">.start-4</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-12">
+    <div class="bg-black col-3 start-1 start-sm-3 start-md-5 start-lg-7 start-xl-9">...</div>
+    <div class="bg-blue col-3 start-4">...</div>
+</div> 
+        </xmp>
+        <p>Here is anoher example :</p>
+        <div>
+            <div class="grid-12 g-0">
+                <div class="bg-blue col-3 start-1">.start-1</div>
+            </div>
+            <div class="grid-12 g-0">
+                <div class="bg-pink col-3 start-4">.start-4</div>
+            </div>
+            <div class="grid-12 g-0">
+                <div class="bg-red col-3 start-7">.start-7</div>
+            </div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-12 g-0">
+    <div class="bg-blue col-3 start-1">...</div>
+</div>
+<div class="grid-12 g-0">
+    <div class="bg-pink col-3 start-4">...</div>
+</div>
+<div class="grid-12 g-0">
+    <div class="bg-red col-3 start-7">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.g-*, .gx-*, .gy-*</h2>
+        <p>You can modify the gutters for a grid (value from 0 to 5).</p>
+        <div class="grid-3 gx-5 gy-0">
+            <div class="col-1 bg-black">Cell</div>
+            <div class="col-1 bg-blue">Cell</div>
+            <div class="col-1 bg-yellow">Cell</div>
+            <div class="col-1 bg-orange">Cell</div>
+            <div class="col-1 bg-indigo">Cell</div>
+            <div class="col-1 bg-pink">Cell</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-3 gx-5 gy-0">
+    <div class="col-1 bg-black">...</div>
+    <div class="col-1 bg-blue">...</div>
+    <div class="col-1 bg-yellow">...</div>
+    <div class="col-1 bg-orange">...</div>
+    <div class="col-1 bg-indigo">...</div>
+    <div class="col-1 bg-pink">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>.rounded-*, .round-circle</h2>
+        <p>From 0 to 5, you can choose the border-radius for a DOM element and its children.</p>
+        <div class="grid-2 grid-sm-3 grid-md-6 rounded-0 bg-blue">
+            <div class="col-1 bg-black">Inherit</div>
+            <div class="col-1 bg-red rounded-circle">.rounded-circle</div>
+            <div class="col-1 bg-orange rounded-0">.rounded-0</div>
+            <div class="col-1 bg-yellow rounded-1">.rounded-1</div>
+            <div class="col-1 bg-purple rounded-2">.rounded-2</div>
+            <div class="col-1 bg-pink rounded-3">.rounded-3</div>
+        </div>
+        <xmp class="bg-gray-light">
+<div class="grid-2 grid-sm-3 grid-md-6 rounded-0 bg-blue">
+    <div class="col-1 bg-black">...</div>
+    <div class="col-1 bg-red rounded-circle">...</div>
+    <div class="col-1 bg-orange rounded-0">...</div>
+    <div class="col-1 bg-yellow rounded-1">...</div>
+    <div class="col-1 bg-purple rounded-2">...</div>
+    <div class="col-1 bg-pink rounded-3">...</div>
+</div>
+        </xmp>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>Forms</h2>
+        <form class="grid-1 g-0 purple">
+            <div class="grid-1 g-1 col-1">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <p id="emailHelp">We'll never share your email with anyone else.</p>
+            </div>
+            <div class="grid-1 g-1 col-1">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" id="exampleInputPassword1">
+            </div>
+            <div class="col-1">
+                <input type="checkbox" id="exampleCheck1"><label for="exampleCheck1">Check me out</label>
+            </div>
+            <div class="col-1">
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label for="flexRadioDefault1">Default radio</label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label for="flexRadioDefault2">Default checked radio</label>
+                </div>
+            </div>
+            <div class="col-1">
+                <label for="customRange1">Example range</label>
+                <input type="range" id="customRange1">
+            </div>
+            <div class="col-1">
+                <select aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <select multiple size="3" aria-label="multiple select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+            </div>
+            <div class="col-1"><button type="submit">Submit</button></div>
+        </form>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>Display utilities</h2>
+        <ul>
+            <li>.d-inline-block {display: inline-block;}</li>
+            <li>.d-block {display: block;}</li>
+            <li>.d-flex {display: flex;}</li>
+            <li>.d-grid {display: grid;}</li>
+        </ul>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>Background colors</h2>
+        <p>Colors helpers can be disabled in Sass with he boolean $use_color_helpers. Moreover, automatic contrasts are optimized with $light and $dark in Sass.</p>
+        <div class="autogrid-9">
+            <div class="col-1 bg-primary border-black-1">.bg-primary</div>
+            <div class="col-1 bg-secondary border-black-1">.bg-secondary</div>
+            <div class="col-1 bg-light border-black-1">.bg-light</div>
+            <div class="col-1 bg-dark border-black-1">.bg-dark</div>
+            <div class="col-1 bg-blue border-black-1">.bg-blue</div>
+            <div class="col-1 bg-indigo border-black-1">.bg-indigo</div>
+            <div class="col-1 bg-purple border-black-1">.bg-purple</div>
+            <div class="col-1 bg-pink border-black-1">.bg-pink</div>
+            <div class="col-1 bg-red border-black-1">.bg-red</div>
+            <div class="col-1 bg-orange border-black-1">.bg-orange</div>
+            <div class="col-1 bg-yellow border-black-1">.bg-yellow</div>
+            <div class="col-1 bg-green border-black-1">.bg-green</div>
+            <div class="col-1 bg-teal border-black-1">.bg-teal</div>
+            <div class="col-1 bg-cyan border-black-1">.bg-cyan</div>
+            <div class="col-1 bg-white border-black-1">.bg-white</div>
+            <div class="col-1 bg-gray-light border-black-1">.bg-gray-light</div>
+            <div class="col-1 bg-gray border-black-1">.bg-gray</div>
+            <div class="col-1 bg-gray-dark border-black-1">.bg-gray-dark</div>
+            <div class="col-1 bg-black border-black-1">.bg-black</div>
+        </div>
+    </section>
+    <section class="grid-1 g-0">
+        <h2>Font colors</h2>
+        <div class="autogrid-10">
+            <div class="col-1 primary border-black-1">.primary</div>
+            <div class="col-1 secondary border-black-1">.secondary</div>
+            <div class="col-1 light border-black-1">.light</div>
+            <div class="col-1 dark border-black-1">.dark</div>
+            <div class="col-1 blue border-black-1">.blue</div>
+            <div class="col-1 indigo border-black-1">.indigo</div>
+            <div class="col-1 purple border-black-1">.purple</div>
+            <div class="col-1 pink border-black-1">.pink</div>
+            <div class="col-1 red border-black-1">.red</div>
+            <div class="col-1 orange border-black-1">.orange</div>
+            <div class="col-1 yellow border-black-1">.yellow</div>
+            <div class="col-1 green border-black-1">.green</div>
+            <div class="col-1 teal border-black-1">.teal</div>
+            <div class="col-1 cyan border-black-1">.cyan</div>
+            <div class="col-1 white border-black-1">.white</div>
+            <div class="col-1 gray-light border-black-1">.gray-light</div>
+            <div class="col-1 gray border-black-1">.gray</div>
+            <div class="col-1 gray-dark border-black-1">.gray-dark</div>
+            <div class="col-1 black border-black-1">.black</div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>

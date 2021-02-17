@@ -1,0 +1,224 @@
+// Styling Cross-Browser Compatible Range Inputs with Sass
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.5.2
+// MIT License
+
+[type='range'] {
+  appearance: none;
+  background: transparent;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+  border: 0;
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:focus {
+    &::-moz-range-thumb {
+      @include form_focus($primary);
+    }
+    &::-webkit-slider-thumb {
+      @include form_focus($primary);
+    }
+    &::-ms-thumb {
+      @include form_focus($primary);
+    }
+
+    &::-webkit-slider-runnable-track {
+      background: lighten($track-color, $contrast);
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2);
+  }
+
+  &::-moz-range-track {
+    @include track;
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    height: $track-height / 2;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: $ie-bottom-track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-fill-upper {
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: $track-height / 4;
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb,
+    &::-webkit-slider-runnable-track,
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      cursor: not-allowed;
+    }
+  }
+}
+
+form {
+  border-radius: $border-radius;
+  p {
+    margin-top: .25rem;
+    font-size: .875em;
+    color: $gray-600;
+    padding: .25rem;
+    border-radius: $border-radius;
+    background: a11y-color($gray-600);
+  }
+}
+
+input:not([type=range]):focus, button:focus, select:focus {
+  @include form_focus($primary);
+}
+
+input, select {
+  width: 100%;
+  background: $white;
+  border: 1px solid $gray-400;
+  &:focus {
+    outline: 0;
+  }
+}
+
+input {
+  &:not([type=checkbox]):not([type=radio]):not([type=range]) {
+    @extend %form_control;
+    display: block;
+    border-radius: $border-radius;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  &[type=checkbox], &[type=radio] {
+      width: 1em;
+      height: 1em;
+      vertical-align: top;
+      appearance: none;
+      border-radius: $border-radius;
+      margin-right: .5rem;
+  }
+  &[type=radio] {
+      border-radius: 50%;
+  }
+  &:checked {
+      &[type=checkbox]{
+        background-color: $primary;
+        border-color: $primary;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+      }
+      &[type=radio] {
+        background-color: $primary;
+        border-color: $primary;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+      }
+  }
+}
+
+button {
+  @include background($primary);
+  @extend %form_control;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  &:hover {
+    @include background(darken($primary,10%));
+  }
+}
+
+select {
+  @extend %form_control;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  border-radius: $border-radius;
+  appearance: none;
+  &[multiple], &[size]:not([size="1"]) {
+      background-image: none;
+  }
+}
+
+// Colors
+@if $use_color_helpers {
+  @each $color_name, $color_code in $colors {
+    body input:checked.#{$color_name}, .#{$color_name} input:checked, body .#{$color_name} > input:checked {
+      @include background($color_code);
+      border: 1px solid $color_code;
+    }
+
+    body input.#{$color_name}[type=range], .#{$color_name} input[type=range], body .#{$color_name} > input[type=range] {
+      &::-moz-range-thumb {
+        background-color: $color_code;
+      }
+      &::-webkit-slider-thumb {
+        background-color: $color_code;
+      }
+      &::-ms-thumb {
+        background-color: $color_code;
+      }
+      &:focus {
+        &::-moz-range-thumb {
+          @include form_focus($color_code);
+        }
+        &::-webkit-slider-thumb {
+          @include form_focus($color_code);
+        }
+        &::-ms-thumb {
+          @include form_focus($color_code);
+        }
+      }
+    }
+
+    body input:not([type=range]):focus.#{$color_name}, .#{$color_name} input:not([type=range]):focus, body .#{$color_name} > input:not([type=range]):focus,
+    body select.#{$color_name}:focus, .#{$color_name} select:focus, body .#{$color_name} > select:focus {
+      @include form_focus($color_code);
+    }
+  }
+}

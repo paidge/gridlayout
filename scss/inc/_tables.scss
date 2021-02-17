@@ -1,0 +1,26 @@
+table {
+    border-spacing: 0;
+    border-color: $gray-400;
+    & > thead {
+        vertical-align: bottom;
+    }
+    & > :not(:last-child) > :last-child > * {
+        border-bottom-color: currentColor;
+    }
+    & > :not(caption) > * > * {
+        padding: .5rem .5rem;
+        border-bottom-width: 1px;
+    }
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+th {
+    text-align: start;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,0.08);
+}
