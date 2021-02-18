@@ -85,21 +85,3 @@ $colors: map-merge(
 $font-family: Arial, Helvetica, sans-serif !default;
 $font-light: $white !default;
 $font-dark: $black !default;
-
-/* Forms */
-$track-color: $gray-400 !default;
-$thumb-color: $primary !default;
-
-$thumb-radius: 12px !default;
-$thumb-height: 24px !default;
-$thumb-width: 24px !default;
-
-$track-width: 100% !default;
-$track-height: 16px !default;
-$track-border-width: 0 !default;
-$track-border-color: #cfd8dc !default;
-
-$track-radius: 5px !default;
-$contrast: 5% !default;
-
-$ie-bottom-track-color: darken($track-color, $contrast) !default;

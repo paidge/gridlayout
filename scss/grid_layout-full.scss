@@ -1,13 +1,16 @@
 // Variable overload
+
 // $primary: green;
 
 // Add colors (.color1 and .bg-color1 classes)
+
 // $colors : (
 //     "color1": #23ce95,
 //     "color2": #ffff00
 // );
 
 // modify the breakpoints (xxl mandatory)
+
 // $grid-breakpoints: (
 //   lg: 700px,
 //   xl: 850px,
@@ -15,6 +18,7 @@
 // );
 
 // Disable the color helpers
+
 // $use_color_helpers: false;
 
 @import 'inc/variables';
@@ -29,6 +33,7 @@
 @import 'inc/forms';
 
 // Add your own rules
+
 // .blue-header {
 //    @include background($blue);
 //    padding: $padding-col;
