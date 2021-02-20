@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid_layout-full.min.css">
+    <title>Grid Layout example</title>
+    <style>
+        xmp {
+            border: 1px solid black;
+            border-radius: .5rem;
+            padding: 0 1rem;
+            white-space: pre-wrap;
+        }
+        header, footer {
+            height: 150px;
+        }
+    </style>
+</head>
+<body class="container grid-12">
+    <header class="bg-blue col-12">Header</header>
+    <nav class="col-12 breadcrumb">
+        <ul class="">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ul>
+    </nav>
+    <aside class="col-md-3 col-lg-2">
+        <h2>Menu</h2>
+        <nav>
+            <ul class="grid-1">
+                <li><a href="#">Menu item 1</a></li>
+                <li><a href="#">Menu item 2</a></li>
+                <li><a href="#">Menu item 3</a></li>
+                <li><a href="#">Menu item 4</a></li>
+                <li><a href="#">Menu item 5</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="bg-indigo col-md-9 col-lg-10 grid-xl-6">
+        <h1 class="col-xl-6">Main</h1>
+        <section class="bg-gray col-xl-3">
+            <h2>Section 1</h2>
+            <div class="autogrid-200 g-4">
+                <article><h3>Article 1</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac felis lobortis sem congue feugiat. Pellentesque quis quam a leo bibendum maximus. Etiam elit odio, finibus in augue eget, placerat volutpat quam. Ut tincidunt mauris nisi, nec elementum ante tristique eget. In hac habitasse platea dictumst. Quisque mattis pharetra neque sit amet vehicula. </p></article>
+                <article><h3>Article 2</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac felis lobortis sem congue feugiat. Pellentesque quis quam a leo bibendum maximus. Etiam elit odio, finibus in augue eget, placerat volutpat quam. Ut tincidunt mauris nisi, nec elementum ante tristique eget. In hac habitasse platea dictumst. Quisque mattis pharetra neque sit amet vehicula. </p></article>
+                <article><h3>Article 3</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac felis lobortis sem congue feugiat. Pellentesque quis quam a leo bibendum maximus. Etiam elit odio, finibus in augue eget, placerat volutpat quam. Ut tincidunt mauris nisi, nec elementum ante tristique eget. In hac habitasse platea dictumst. Quisque mattis pharetra neque sit amet vehicula. </p></article>
+                <article><h3>Article 4</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac felis lobortis sem congue feugiat. Pellentesque quis quam a leo bibendum maximus. Etiam elit odio, finibus in augue eget, placerat volutpat quam. Ut tincidunt mauris nisi, nec elementum ante tristique eget. In hac habitasse platea dictumst. Quisque mattis pharetra neque sit amet vehicula. </p></article>
+            </div>
+        </section>
+        <section class="bg-gray col-xl-3">
+            <h2>Section 2</h2>
+            <div class="autogrid-150">
+                <img src="https://picsum.photos/400?random=1" class="img-fluid img-thumbnail">
+                <img src="https://picsum.photos/400?random=2" class="img-fluid img-thumbnail">
+                <img src="https://picsum.photos/400?random=3" class="img-fluid img-thumbnail">
+            </div>
+        </section>
+        <section class="bg-gray col-xl-3">
+            <h2>Section 3</h2>
+        </section>
+        <section class="bg-gray col-xl-3">
+            <h2>Section 4</h2>
+        </section>
+    </main>
+    <footer class="bg-orange col-12">Footer</footer>
+</body>
+<xmp class="col-12 bg-gray-light">
+    <body class="container grid-12">
+        <header class="bg-blue col-12">Header</header>
+        <nav class="col-12 breadcrumb">
+            <ul class="">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ul>
+        </nav>
+        <aside class="col-md-3 col-lg-2">
+            <h2>Menu</h2>
+            <nav>
+                <ul class="grid-1">
+                    <li><a href="#">Menu item 1</a></li>
+                    <li><a href="#">Menu item 2</a></li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="bg-indigo col-md-9 col-lg-10 grid-xl-6">
+            <h1 class="col-xl-6">Main</h1>
+            <section class="bg-gray col-xl-3">
+                <h2>Section 1</h2>
+                <div class="autogrid-200 g-4">
+                    <article><h3>Article 1</h3><p>Lorem ipsum ... </p></article>
+                    <article><h3>Article 2</h3><p>Lorem ipsum ... </p></article>
+                    <article><h3>Article 3</h3><p>Lorem ipsum ... </p></article>
+                    <article><h3>Article 4</h3><p>Lorem ipsum ... </p></article>
+                </div>
+            </section>
+            <section class="bg-gray col-xl-3">
+                <h2>Section 2</h2>
+                <div class="autogrid-150">
+                    <img src="https://picsum.photos/400?random=1" class="img-fluid img-thumbnail">
+                    <img src="https://picsum.photos/400?random=2" class="img-fluid img-thumbnail">
+                    <img src="https://picsum.photos/400?random=3" class="img-fluid img-thumbnail">
+                </div>
+            </section>
+            <section class="bg-gray col-xl-3">
+                <h2>Section 3</h2>
+            </section>
+            <section class="bg-gray col-xl-3">
+                <h2>Section 4</h2>
+            </section>
+        </main>
+        <footer class="bg-orange col-12">Footer</footer>
+    </body>
+</xmp>
+</html>

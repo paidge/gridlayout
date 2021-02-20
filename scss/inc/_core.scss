@@ -3,6 +3,15 @@
     font-family: $font-family;
 }
 
+a {
+    text-decoration: none;
+    color: $color-link;
+    &:hover {
+        color: darken($color-link,15%);
+        text-decoration: underline;
+    }
+}
+
 // Container
 .container, .container-fluid {
     padding: 0 $padding-grid;
@@ -17,14 +26,15 @@
 
 [class*="grid-"] {
     display: grid;
+    grid-template-rows: min-content;
     border-radius: $border-radius;
     column-gap: $gap-x;
     row-gap: $gap-y;
 }
 
 *[class^="grid-"], *[class*=" grid-"] {
+    grid-template-columns: repeat(1, 1fr);
     & > * {
-        grid-column: 1 / -1;
         min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -38,15 +48,21 @@
 *[class*="col-"] {
     padding: $padding-col;
     border-radius: $border-radius;
+    grid-column: 1 / -1;
+}
+
+aside[class*="col-"] {
+    padding: 0;
 }
 
 @for $i from 1 through $nb_columns_max {
-    .container {
-        & .autogrid-#{$i} {
-            grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl)*$container_width_coef - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
-        }
-        &-fluid .autogrid-#{$i} {
-            grid-template-columns: repeat(auto-fill, minmax(#{(map-get($grid-breakpoints,xxl) - (2*$padding-grid) - ($i - 1)*$gap-x)/$i}, 1fr));
+    .autogrid-#{$i*100} {
+        grid-template-columns: repeat(auto-fill, minmax($i*100px, 1fr));
+    }
+    @if $i < $nb_columns_max {
+        $j: ($i*100)+$autogrid-steps;
+        .autogrid-#{$j} {
+            grid-template-columns: repeat(auto-fill, minmax($j*1px, 1fr));
         }
     }
     .grid-#{$i} {

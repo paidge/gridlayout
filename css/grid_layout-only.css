@@ -1,6 +1,7 @@
 /* Grid */
 /* Colors */
 /* Fonts */
+/* Nav */
 /**
  * Calculate the luminance for a color.
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
@@ -363,6 +364,15 @@ template {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
 .container, .container-fluid {
   padding: 0 16px;
   margin: 0 auto;
@@ -388,6 +398,8 @@ template {
 
 [class*=grid-] {
   display: grid;
+  grid-template-rows: -webkit-min-content;
+  grid-template-rows: min-content;
   border-radius: 0.25rem;
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
@@ -395,8 +407,10 @@ template {
   row-gap: 16px;
 }
 
+*[class^=grid-], *[class*=" grid-"] {
+  grid-template-columns: repeat(1, 1fr);
+}
 *[class^=grid-] > *, *[class*=" grid-"] > * {
-  grid-column: 1/-1;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -409,13 +423,19 @@ template {
 *[class*=col-] {
   padding: 12px;
   border-radius: 0.25rem;
+  grid-column: 1/-1;
 }
 
-.container .autogrid-1 {
-  grid-template-columns: repeat(auto-fill, minmax(1298px, 1fr));
+aside[class*=col-] {
+  padding: 0;
 }
-.container-fluid .autogrid-1 {
-  grid-template-columns: repeat(auto-fill, minmax(1368px, 1fr));
+
+.autogrid-100 {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.autogrid-150 {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .grid-1 {
@@ -430,11 +450,12 @@ template {
   grid-column-start: 1;
 }
 
-.container .autogrid-2 {
-  grid-template-columns: repeat(auto-fill, minmax(641px, 1fr));
+.autogrid-200 {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
-.container-fluid .autogrid-2 {
-  grid-template-columns: repeat(auto-fill, minmax(676px, 1fr));
+
+.autogrid-250 {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .grid-2 {
@@ -449,11 +470,12 @@ template {
   grid-column-start: 2;
 }
 
-.container .autogrid-3 {
-  grid-template-columns: repeat(auto-fill, minmax(422px, 1fr));
+.autogrid-300 {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-.container-fluid .autogrid-3 {
-  grid-template-columns: repeat(auto-fill, minmax(445.3333333333px, 1fr));
+
+.autogrid-350 {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .grid-3 {
@@ -468,11 +490,12 @@ template {
   grid-column-start: 3;
 }
 
-.container .autogrid-4 {
-  grid-template-columns: repeat(auto-fill, minmax(312.5px, 1fr));
+.autogrid-400 {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
-.container-fluid .autogrid-4 {
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+
+.autogrid-450 {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
 }
 
 .grid-4 {
@@ -487,11 +510,12 @@ template {
   grid-column-start: 4;
 }
 
-.container .autogrid-5 {
-  grid-template-columns: repeat(auto-fill, minmax(246.8px, 1fr));
+.autogrid-500 {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
-.container-fluid .autogrid-5 {
-  grid-template-columns: repeat(auto-fill, minmax(260.8px, 1fr));
+
+.autogrid-550 {
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
 }
 
 .grid-5 {
@@ -506,11 +530,12 @@ template {
   grid-column-start: 5;
 }
 
-.container .autogrid-6 {
-  grid-template-columns: repeat(auto-fill, minmax(203px, 1fr));
+.autogrid-600 {
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
 }
-.container-fluid .autogrid-6 {
-  grid-template-columns: repeat(auto-fill, minmax(214.6666666667px, 1fr));
+
+.autogrid-650 {
+  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
 }
 
 .grid-6 {
@@ -525,11 +550,12 @@ template {
   grid-column-start: 6;
 }
 
-.container .autogrid-7 {
-  grid-template-columns: repeat(auto-fill, minmax(171.7142857143px, 1fr));
+.autogrid-700 {
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
 }
-.container-fluid .autogrid-7 {
-  grid-template-columns: repeat(auto-fill, minmax(181.7142857143px, 1fr));
+
+.autogrid-750 {
+  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
 }
 
 .grid-7 {
@@ -544,11 +570,12 @@ template {
   grid-column-start: 7;
 }
 
-.container .autogrid-8 {
-  grid-template-columns: repeat(auto-fill, minmax(148.25px, 1fr));
+.autogrid-800 {
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
 }
-.container-fluid .autogrid-8 {
-  grid-template-columns: repeat(auto-fill, minmax(157px, 1fr));
+
+.autogrid-850 {
+  grid-template-columns: repeat(auto-fill, minmax(850px, 1fr));
 }
 
 .grid-8 {
@@ -563,11 +590,12 @@ template {
   grid-column-start: 8;
 }
 
-.container .autogrid-9 {
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+.autogrid-900 {
+  grid-template-columns: repeat(auto-fill, minmax(900px, 1fr));
 }
-.container-fluid .autogrid-9 {
-  grid-template-columns: repeat(auto-fill, minmax(137.7777777778px, 1fr));
+
+.autogrid-950 {
+  grid-template-columns: repeat(auto-fill, minmax(950px, 1fr));
 }
 
 .grid-9 {
@@ -582,11 +610,12 @@ template {
   grid-column-start: 9;
 }
 
-.container .autogrid-10 {
-  grid-template-columns: repeat(auto-fill, minmax(115.4px, 1fr));
+.autogrid-1000 {
+  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
 }
-.container-fluid .autogrid-10 {
-  grid-template-columns: repeat(auto-fill, minmax(122.4px, 1fr));
+
+.autogrid-1050 {
+  grid-template-columns: repeat(auto-fill, minmax(1050px, 1fr));
 }
 
 .grid-10 {
@@ -601,11 +630,12 @@ template {
   grid-column-start: 10;
 }
 
-.container .autogrid-11 {
-  grid-template-columns: repeat(auto-fill, minmax(103.4545454545px, 1fr));
+.autogrid-1100 {
+  grid-template-columns: repeat(auto-fill, minmax(1100px, 1fr));
 }
-.container-fluid .autogrid-11 {
-  grid-template-columns: repeat(auto-fill, minmax(109.8181818182px, 1fr));
+
+.autogrid-1150 {
+  grid-template-columns: repeat(auto-fill, minmax(1150px, 1fr));
 }
 
 .grid-11 {
@@ -620,11 +650,8 @@ template {
   grid-column-start: 11;
 }
 
-.container .autogrid-12 {
-  grid-template-columns: repeat(auto-fill, minmax(93.5px, 1fr));
-}
-.container-fluid .autogrid-12 {
-  grid-template-columns: repeat(auto-fill, minmax(99.3333333333px, 1fr));
+.autogrid-1200 {
+  grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
 }
 
 .grid-12 {
@@ -1472,6 +1499,10 @@ body *.rounded-circle, .rounded-circle * {
   border-radius: 50%;
 }
 
+article p {
+  text-align: justify;
+}
+
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -1520,6 +1551,34 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     font-size: 1.5rem;
   }
 }
+nav ul {
+  list-style-type: none;
+  padding: 1.5rem;
+  background: #e9ecef;
+  margin: 0;
+}
+nav.breadcrumb {
+  padding: 0;
+}
+nav.breadcrumb ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #e9ecef;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+nav.breadcrumb li.active {
+  color: #6c757d;
+}
+nav.breadcrumb li + li {
+  padding-left: 0.5rem;
+}
+nav.breadcrumb li + li::before {
+  padding-right: 0.5rem;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E");
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;

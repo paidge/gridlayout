@@ -1,0 +1,29 @@
+nav {
+    ul {
+        list-style-type: none;
+        padding: 1.5rem;
+        background: $nav-bg-color;
+        margin: 0;
+    }
+    &.breadcrumb {
+        padding: 0;
+        ul {
+            display: flex;
+            background: $breadcrumb-bg-color;
+            border-radius: $border-radius;
+            padding: .75rem 1rem;
+        }
+        li {
+            &.active {
+                color: $breadcrumb-active-color;
+            }
+            &+li {
+                padding-left: .5rem;
+                &::before {
+                    padding-right: .5rem;
+                    content: $breadcrumb-divider;
+                }
+            }
+        }
+    }
+}
