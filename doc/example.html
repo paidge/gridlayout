@@ -15,11 +15,14 @@
         header, footer {
             height: 150px;
         }
+        [class*="col"], [class*="row-"] {
+            padding: 12px;
+        }
     </style>
 </head>
-<body class="container grid-12">
-    <header class="bg-blue col-12">Header</header>
-    <nav class="col-12 breadcrumb">
+<body class="container grid-1 grid-md-12">
+    <header class="bg-blue col-md-12">Header</header>
+    <nav class="col-md-12 breadcrumb">
         <ul class="">
             <li><a href="#">Home</a></li>
             <li><a href="#">Library</a></li>
@@ -64,9 +67,9 @@
             <h2>Section 4</h2>
         </section>
     </main>
-    <footer class="bg-orange col-12">Footer</footer>
+    <footer class="bg-orange col-md-12">Footer</footer>
 </body>
-<xmp class="col-12 bg-gray-light">
+<xmp class="col-md-12 bg-gray-light">
     <body class="container grid-12">
         <header class="bg-blue col-12">Header</header>
         <nav class="col-12 breadcrumb">

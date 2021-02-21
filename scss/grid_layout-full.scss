@@ -20,13 +20,15 @@
 // Disable the color helpers
 
 // $use_color_helpers: false;
+$border-radius:0;
+$padding-col:0;
 
 @import 'inc/variables';
 @import 'inc/functions';
 @import 'inc/mixins';
 @import 'lib/normalize';
 @import 'inc/core';
-@import 'inc/fonts';
+@import 'inc/typo';
 @import 'inc/nav';
 @import 'inc/images';
 @import 'inc/colors';

@@ -4,11 +4,12 @@
 }
 
 a {
-    text-decoration: none;
-    color: $color-link;
+    text-decoration: $link-decoration;
+    color: $link-color;
+    transition: $link-transition;
     &:hover {
-        color: darken($color-link,15%);
-        text-decoration: underline;
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
     }
 }
 
@@ -26,53 +27,48 @@ a {
 
 [class*="grid-"] {
     display: grid;
+    grid-auto-columns: 1fr;
     grid-template-rows: min-content;
+    grid-template-columns: repeat(1, 1fr);
     border-radius: $border-radius;
     column-gap: $gap-x;
     row-gap: $gap-y;
-}
-
-*[class^="grid-"], *[class*=" grid-"] {
-    grid-template-columns: repeat(1, 1fr);
     & > * {
         min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
-        &:first-child {
-            grid-column-start: 1;
-            grid-row-start: 1;
-        }
+        padding: $padding-col;
+        border-radius: $border-radius;
     }
 }
 
-*[class*="col-"] {
-    padding: $padding-col;
-    border-radius: $border-radius;
-    grid-column: 1 / -1;
-}
-
-aside[class*="col-"] {
+aside[class*="col"] {
     padding: 0;
 }
 
+$width: $autogrid-min-width;
+@while $width <= $autogrid-max-width {
+    $i: $width/1px;
+    .autogrid-#{$i} {
+        grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+    }
+    $width: $width+$autogrid-steps;
+}
+
 @for $i from 1 through $nb_columns_max {
-    .autogrid-#{$i*100} {
-        grid-template-columns: repeat(auto-fill, minmax($i*100px, 1fr));
-    }
-    @if $i < $nb_columns_max {
-        $j: ($i*100)+$autogrid-steps;
-        .autogrid-#{$j} {
-            grid-template-columns: repeat(auto-fill, minmax($j*1px, 1fr));
-        }
-    }
     .grid-#{$i} {
         grid-template-columns: repeat($i, 1fr);
     }
-    .col-#{$i} {
-        grid-column: auto / span $i;
-    }
-    *[class*="grid-"] > .start-#{$i} {
-        grid-column-start: $i;
+    @if $i > 1 {
+        .row-#{$i} {
+            grid-row: auto / span $i;
+        }
+        .col-#{$i} {
+            grid-column: auto / span $i;
+        }    
+        [class*="grid-"] > .start-#{$i} {
+            grid-column-start: $i;
+        }
     }
 }
 
@@ -89,7 +85,7 @@ aside[class*="col-"] {
             .col-#{$grid-breakpoint}-#{$i} {
                 grid-column: auto / span $i;
             }
-            *[class*="grid-"] > .start-#{$grid-breakpoint}-#{$i} {
+            [class*="grid-"] > .start-#{$grid-breakpoint}-#{$i} {
                 grid-column-start: $i;
             }
         }
@@ -105,7 +101,7 @@ aside[class*="col-"] {
         row-gap: map-get($gutters , $i );
     }
     body *.rounded-#{$i}, .rounded-#{$i} * {
-        border-radius: map-get($gutters, $i);
+        border-radius: map-get($rounds, $i);
     }
 }
 body *.rounded-circle, .rounded-circle * {border-radius: 50%;}
