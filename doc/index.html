@@ -6,17 +6,20 @@
     <link rel="stylesheet" href="../css/grid_layout-full.min.css">
     <title>Grid Layout doc</title>
     <style>
-        xmp {
-            border: 1px solid black;
-            border-radius: .5rem;
-            padding: 0 1rem;
-            white-space: pre-wrap;
-        }
         section {
             margin-bottom: 1rem;
         }
         [class*="grid-"] > * {
             padding: .5rem;
+        }
+        iframe {
+            width: 100%;
+            border:0;
+            transform: scale(1);
+            overflow:hidden;
+        }
+        .export-container {
+            width: 100%;
         }
     </style>
 </head>
@@ -24,7 +27,7 @@
     <h1>Responsive Grid Layout with CSS Grid</h1>
     <section class="grid-1 g-0">
         <h2>Introduction</h2>
-        <p>Here is a light weight (62Ko for the full version or 21ko without color helpers, just with the grid ones) CSS library to theme and build responsive websites with CSS grid. You can customize and lighten it by modifying the Sass files.</p>
+        <p>Here is a light weight (64Ko for the full version or 24ko without color helpers, just with the grid ones) CSS library to theme and build responsive websites with CSS grid. You can customize and lighten it by modifying the Sass files.</p>
         <p>By default, It uses the same breakpoints as Bootstrap.</p>
         <table class="table-striped">
             <thead>
@@ -85,17 +88,11 @@
             <div class="bg-red">Cell</div>
             <div class="bg-indigo">Cell</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="autogrid-300">
-    <div class="bg-black col-md-2">...</div>
-    <div class="bg-blue">...</div>
-    <div class="bg-cyan">...</div>
-    <div class="bg-yellow">...</div>
-    <div class="bg-orange">...</div>
-    <div class="bg-red">...</div>
-    <div class="bg-indigo">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522autogrid-300%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-md-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-cyan%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-indigo%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 355px;"
+        sandbox="allow-scripts allow-same-origin">
+        </iframe>
     </section>
     <section class="grid-1 g-0">
         <h2>.grid-*</h2>
@@ -108,19 +105,15 @@
             <div class="bg-gray">Cell</div>
             <div class="bg-yellow">Cell</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-2 grid-md-4">
-    <div class="bg-black col-2 col-md-3">...</div>
-    <div class="bg-blue">...</div>
-    <div class="bg-red">...</div>
-    <div class="bg-gray">...</div>
-    <div class="bg-yellow">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-2%2520grid-md-4%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-2%2520col-md-3%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-gray%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 305px;"
+        sandbox="allow-scripts allow-same-origin">
+        </iframe>
     </section>
     <section class="grid-1 g-0">
         <h2>.col-*</h2>
-        <p>These classes determine the width of the cells (how many columns) and add some padding and border-radius (you can set $border-radius:0 in sass o disable it). Here is a complex example to show you different possibilities :</p>
+        <p>These classes determine the width of the cells (how many columns) and add some padding (you can set $padding-col:0 in sass to disable it). Here is a complex example to show you different possibilities :</p>
         <div class="grid-sm-12">
             <div class="bg-black col-sm-9 col-md-12 col-lg-6 col-xl-4 col-xxl-10 start-xxl-2">.col-sm-9.col-md-12.col-lg-6.col-xl-4.col-xxl-10.start-xxl-2</div>
             <div class="bg-blue col-sm-6 col-md-4 col-lg-6 col-xl-8">.col-sm-6.col-md-4.col-lg-6.col-xl-8</div>
@@ -128,15 +121,11 @@
             <div class="bg-cyan col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
             <div class="bg-gray col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-12">
-    <div class="bg-black col-sm-9 col-md-12 col-lg-6 col-xl-4 col-xxl-10 start-xxl-2">...</div>
-    <div class="bg-blue col-sm-6 col-md-4 col-lg-6 col-xl-8">...</div>
-    <div class="bg-red col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
-    <div class="bg-cyan col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
-    <div class="bg-gray col-sm-6 col-md-4 col-lg-3 col-xl-2">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-sm-9%2520col-md-12%2520col-lg-6%2520col-xl-4%2520col-xxl-10%2520start-xxl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-sm-6%2520col-md-4%2520col-lg-6%2520col-xl-8%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-cyan%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-gray%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 305px;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>      
     </section>
     <section class="grid-1 g-0">
         <h2>.start-*</h2>
@@ -145,12 +134,11 @@
             <div class="bg-black col-3 start-sm-3 start-md-5 start-lg-7 start-xl-9">.start-1.start-sm-3.start-md-5.start-lg-7.start-xl-9</div>
             <div class="bg-blue col-3 start-4">.start-4</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-12">
-    <div class="bg-black col-3 start-sm-3 start-md-5 start-lg-7 start-xl-9">...</div>
-    <div class="bg-blue col-3 start-4">...</div>
-</div> 
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-3%2520start-sm-3%2520start-md-5%2520start-lg-7%2520start-xl-9%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-3%2520start-4%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 250px;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>
         <p>Here is anoher example :</p>
         <div>
             <div class="grid-12 g-0">
@@ -163,17 +151,11 @@
                 <div class="bg-red col-3 start-7">.start-7</div>
             </div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-12 g-0">
-    <div class="bg-blue col-3">...</div>
-</div>
-<div class="grid-12 g-0">
-    <div class="bg-pink col-3 start-4">...</div>
-</div>
-<div class="grid-12 g-0">
-    <div class="bg-red col-3 start-7">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-3%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E%250D%250A%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2520col-3%2520start-4%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E%250D%250A%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520col-3%2520start-7%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 340px;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>      
     </section>
     <section class="grid-1 g-0">
         <h2>.g-*, .gx-*, .gy-*</h2>
@@ -186,16 +168,11 @@
             <div class="bg-indigo">Cell</div>
             <div class="bg-pink">Cell</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-3 gx-5 gy-0">
-    <div class="bg-black">...</div>
-    <div class="bg-blue">...</div>
-    <div class="bg-yellow">...</div>
-    <div class="bg-orange">...</div>
-    <div class="bg-indigo">...</div>
-    <div class="bg-pink">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-3%2520gx-5%2520gy-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-indigo%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 320px;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>      
     </section>
     <section class="grid-1 g-0">
         <h2>.rounded-*, .round-circle</h2>
@@ -208,16 +185,11 @@
             <div class="bg-purple rounded-2">.rounded-2</div>
             <div class="bg-pink rounded-3">.rounded-3</div>
         </div>
-        <xmp class="bg-gray-light">
-<div class="grid-2 grid-sm-3 grid-md-6 rounded-0 bg-blue">
-    <div class="bg-black">...</div>
-    <div class="bg-red rounded-circle">...</div>
-    <div class="bg-orange rounded-0">...</div>
-    <div class="bg-yellow rounded-1">...</div>
-    <div class="bg-purple rounded-2">...</div>
-    <div class="bg-pink rounded-3">...</div>
-</div>
-        </xmp>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-2%2520grid-sm-3%2520grid-md-6%2520rounded-0%2520bg-blue%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520rounded-circle%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2520rounded-0%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2520rounded-1%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-purple%2520rounded-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2520rounded-3%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
+        style="height: 320px;"
+        sandbox="allow-scripts allow-same-origin">
+      </iframe>      
     </section>
     <section class="grid-1 g-0">
         <h2>Forms</h2>
@@ -270,6 +242,7 @@
     <section class="grid-1 g-0">
         <h2>Display utilities</h2>
         <ul>
+            <li>.d-none {display: none;}</li>
             <li>.d-inline-block {display: inline-block;}</li>
             <li>.d-block {display: block;}</li>
             <li>.d-flex {display: flex;}</li>

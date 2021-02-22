@@ -6,16 +6,12 @@
   line-height: 1.5;
 }
 
-form {
-  border-radius: $border-radius;
-  p {
-    margin-top: .25rem;
-    font-size: .875em;
-    color: $gray-600;
-    padding: .25rem;
-    border-radius: $border-radius;
-    background: a11y-color($gray-600);
-  }
+form p {
+  margin-top: .25rem;
+  font-size: .875em;
+  color: $gray-600;
+  padding: .25rem;
+  background: a11y-color($gray-600);
 }
 
 input:not([type=range]):focus, button:focus, select:focus {
@@ -35,7 +31,6 @@ input {
   &:not([type=checkbox]):not([type=radio]):not([type=range]) {
     @extend %form_control;
     display: block;
-    border-radius: $border-radius;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   &[type=checkbox], &[type=radio] {
@@ -43,7 +38,6 @@ input {
     height: 1em;
     vertical-align: top;
     appearance: none;
-    border-radius: $border-radius;
     margin-right: .5rem;
   }
   &[type=radio] {
@@ -70,7 +64,6 @@ button {
   cursor: pointer;
   user-select: none;
   border: 1px solid transparent;
-  border-radius: $border-radius;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   &:hover {
     @include background(darken($primary,10%));
@@ -83,7 +76,6 @@ select {
   background-repeat: no-repeat;
   background-position: right .75rem center;
   background-size: 16px 12px;
-  border-radius: $border-radius;
   appearance: none;
   &[multiple], &[size]:not([size="1"]) {
     background-image: none;

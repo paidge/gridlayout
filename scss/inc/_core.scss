@@ -20,17 +20,11 @@ a {
 }
 
 // Grid
-.d-block {display: block;}
-.d-inline-block {display: inline-block;}
-.d-flex {display: flex;}
-.d-grid {display: grid;}
-
 [class*="grid-"] {
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-rows: min-content;
     grid-template-columns: repeat(1, 1fr);
-    border-radius: $border-radius;
     column-gap: $gap-x;
     row-gap: $gap-y;
     & > * {
@@ -38,12 +32,13 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
         padding: $padding-col;
-        border-radius: $border-radius;
     }
 }
 
-aside[class*="col"] {
-    padding: 0;
+aside, nav {
+    &[class*="col-"] {
+        padding: 0;
+    }
 }
 
 $width: $autogrid-min-width;
@@ -72,9 +67,18 @@ $width: $autogrid-min-width;
     }
 }
 
+// Display Helpers
+@each $helper in $d-helpers {
+    .d-#{$helper} {display: $helper;}
+}
+
 // Responsive
 @each $grid-breakpoint, $size in $grid-breakpoints {
     @media screen and (min-width:#{$size}) {
+        // Display Helpers
+        @each $helper in $d-helpers {
+            .d-#{$grid-breakpoint}-#{$helper} {display: $helper;}
+        }
         .container {
             max-width: $size*$container_width_coef;
         }

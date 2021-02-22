@@ -20,8 +20,7 @@
 // Disable the color helpers
 
 // $use_color_helpers: false;
-$border-radius:0;
-$padding-col:0;
+// $padding-col:0;
 
 @import 'inc/variables';
 @import 'inc/functions';
@@ -40,8 +39,6 @@ $padding-col:0;
 // .blue-header {
 //    @include background($blue);
 //    padding: $padding-col;
-//    border-top-left-radius: $border-radius;
-//    border-top-right-radius: $border-radius;
 //    h1 {
 //     font-size: 2rem;
 //    }

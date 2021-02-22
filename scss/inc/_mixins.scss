@@ -7,21 +7,6 @@
 }
 
 /* Forms */
-@mixin track_shape ($color, $border-width, $border-color, $radius) {
-  background: $color;
-  border: $border-width solid $border-color;
-  border-radius: $radius;
-}
-  
-@mixin thumb {
-  background: $thumb-color;
-  border-radius: $thumb-radius;
-  box-sizing: border-box;
-  cursor: default;
-  height: $thumb-height;
-  width: $thumb-width;
-}
-
 @mixin form_focus($color) {
   border-color: saturate($color,10%);
   box-shadow: 0 0 0 .25rem rgba(desaturate($color,10%),.25);

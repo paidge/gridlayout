@@ -22,7 +22,6 @@ $padding-col : 12px !default;
 $gap: 16px !default;
 $gap-x : $gap !default;
 $gap-y : $gap !default;
-$border-radius : .25rem !default;
 $round : 16px !default;
 $gutters : (
   0: 0,
@@ -39,6 +38,13 @@ $rounds : (
   3: $round,
   4: $round * 1.5,
   5: $round * 3,
+) !default;
+$d-helpers: (
+  none,
+  block,
+  inline-block,
+  flex,
+  grid,
 ) !default;
 
 /* Colors */
@@ -104,8 +110,23 @@ $link-transition: all .2s !default;
 $link-hover-color: darken($link-color,15%) !default;
 $link-hover-decoration: none !default;
 
+/* IMG */
+$img-thumbnail-radius: .25rem !default;
+
 /* Nav */
+$hamburger-color: $gray-600 !default;
+$hamburder-background: $white !default;
+$hamburger-border: 2px solid rgba($hamburger-color,.2) !default;
+$hamburger-width: 40px !default;
+$hamburger-bar-width: 4px !default;
+$hamburger-bar-radius: 4px !default;
+
 $nav-bg-color: $gray-200 !default;
+$nav-link-padding: .5rem !default;
+$nav-link-active-color: $primary !default;
+
 $breadcrumb-bg-color: $gray-200 !default;
 $breadcrumb-active-color: $gray-600 !default;
+$breadcrumb-padding: .75rem 1rem !default;
+$breadcrumb-divider-padding: .5rem !default;
 $breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E") !default;

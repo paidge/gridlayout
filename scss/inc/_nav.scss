@@ -1,29 +1,104 @@
+.hamburger {
+    padding: .5rem;
+    border: $hamburger-border;
+    background: $hamburder-background;
+    .icon-bar {
+        display: block;
+        width: $hamburger-width;
+        height: $hamburger-bar-width;
+        background-color: $hamburger-color;
+        border-radius: $hamburger-bar-radius;
+        margin: 4px;
+        transition: all 0.2s;
+      }
+      .top-bar {
+        transform: rotate(0);
+      }
+      .middle-bar {
+        opacity: 1;
+      }
+}
+
 nav {
+    padding: 0;
     ul {
-        list-style-type: none;
-        padding: 1.5rem;
-        background: $nav-bg-color;
+        padding: 0;
         margin: 0;
+        list-style-type: none;
+        background: $nav-bg-color;
+        transition: all .2s ease-out;
+        transform-origin: top;
+    }
+    &.vertical-nav {
+        [type=checkbox]{
+            display: none;
+            &:checked + label {
+                .top-bar {
+                  transform: translateY(8px) rotate(45deg);
+                }
+                .middle-bar {
+                  opacity: 0;
+                }
+                .bottom-bar {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+                & + ul {
+                    transform: scaleY(1);
+                    height: auto;
+                }
+            }
+        }
+        label {
+            cursor: pointer;
+            display: flex;
+        }
+        ul {
+            transform:scaleY(0);
+            height: 0;
+        }
+        li{
+            transition: all .2s;
+            &.active {
+                a {
+                    @include background($primary);
+                }
+            }
+            &:hover {
+                background: rgba(0,0,0,0.1);
+            }
+            a{
+                display: block;
+                padding: $nav-link-padding;
+            }
+        }
     }
     &.breadcrumb {
-        padding: 0;
         ul {
             display: flex;
             background: $breadcrumb-bg-color;
-            border-radius: $border-radius;
-            padding: .75rem 1rem;
+            padding: $breadcrumb-padding;
         }
         li {
             &.active {
                 color: $breadcrumb-active-color;
             }
             &+li {
-                padding-left: .5rem;
+                padding-left: $breadcrumb-divider-padding;
                 &::before {
-                    padding-right: .5rem;
+                    padding-right: $breadcrumb-divider-padding;
                     content: $breadcrumb-divider;
                 }
             }
         }
     }
+}
+
+@media screen and (min-width:#{map-get($grid-breakpoints,md)}) {
+    nav.vertical-nav{
+        label {display: none;}
+        ul {
+            transform:scaleY(1);
+            height: auto;
+        }
+    } 
 }
