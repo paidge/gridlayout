@@ -1,30 +1,40 @@
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+    @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+    @return mix(black, $color, $weight);
+}
+
 /**
  * Calculate the luminance for a color.
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
  */
- @function luminance($color) {
+@function luminance($color) {
     $red: nth($linear-channel-values, red($color) + 1);
     $green: nth($linear-channel-values, green($color) + 1);
     $blue: nth($linear-channel-values, blue($color) + 1);
   
     @return .2126 * $red + .7152 * $green + .0722 * $blue;
-  }
+}
   
   /**
    * Calculate the contrast ratio between two colors.
    * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
    */
-  @function contrast($back, $front) {
+@function contrast($back, $front) {
     $backLum: luminance($back) + .05;
     $foreLum: luminance($front) + .05;
   
     @return max($backLum, $foreLum) / min($backLum, $foreLum);
-  }
+}
   
   /**
-   * Determine whether to use dark or light text on top of given color.
+   * Determine whether to use dark or light color for a given color.
    */
-  @function a11y-color($color) {
+@function a11y-color($color) {
     $lightContrast: contrast($color, $light);
     $darkContrast: contrast($color, $dark);
   
@@ -34,4 +44,4 @@
     @else {
       @return $dark;
     }
-  }
+}

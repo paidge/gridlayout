@@ -3,301 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/grid_layout-full.min.css">
-    <title>Grid Layout doc</title>
-    <style>
-        section {
-            margin-bottom: 1rem;
-        }
-        [class*="grid-"] > * {
-            padding: .5rem;
-        }
-        iframe {
-            width: 100%;
-            border:0;
-            transform: scale(1);
-            overflow:hidden;
-        }
-        .export-container {
-            width: 100%;
-        }
-    </style>
+    <title>Grid Layout documentation</title>
+    <link rel="stylesheet" href="../css/gridlayout-full.min.css">
+    <link rel="stylesheet" href="../css/doc.min.css">
 </head>
-<body class="container">
-    <h1>Responsive Grid Layout with CSS Grid</h1>
-    <section class="grid-1 g-0">
-        <h2>Introduction</h2>
-        <p>Here is a light weight (64Ko for the full version or 24ko without color helpers, just with the grid ones) CSS library to theme and build responsive websites with CSS grid. You can customize and lighten it by modifying the Sass files.</p>
-        <p>By default, It uses the same breakpoints as Bootstrap.</p>
-        <table class="table-striped">
-            <thead>
-                <tr>
-                    <th>Breakpoint</th>
-                    <th>Class infix</th>
-                    <th>Dimensions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>X-Small</td>
-                    <td><em>None</em></td>
-                    <td>&lt;576px</td>
-                </tr>
-                <tr>
-                    <td>Small</td>
-                    <td><code>sm</code></td>
-                    <td>≥576px</td>
-                </tr>
-                <tr>
-                    <td>Medium</td>
-                    <td><code>md</code></td>
-                    <td>≥768px</td>
-                </tr>
-                <tr>
-                    <td>Large</td>
-                    <td><code>lg</code></td>
-                    <td>≥992px</td>
-                </tr>
-                <tr>
-                    <td>Extra large</td>
-                    <td><code>xl</code></td>
-                    <td>≥1200px</td>
-                </tr>
-                <tr>
-                    <td>Extra extra large</td>
-                    <td><code>xxl</code></td>
-                    <td>≥1400px</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.container, .container-fluid</h2>
-        <p>Containers add horizontal padding. The fluid one takes 100% of the parent and the other sets a max-width at each responsive breakpoint (95% of the breakpoint value by default).</p>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.autogrid-*</h2>
-        <p>Responsive auto grid for which you define the min-width (100px to 1200px by default with 50px steps) for each column. Especially usefull when you want to control the min-width of children or when you use a .container-fluid.</p>
-        <p>The number of columns is adjusted by the width of the parent. Here is an <b>.autogrid-300</b> :</p>
-        <div class="autogrid-300">
-            <div class="bg-black col-md-2">Cell</div>
-            <div class="bg-blue">Cell</div>
-            <div class="bg-cyan">Cell</div>
-            <div class="bg-yellow">Cell</div>
-            <div class="bg-orange">Cell</div>
-            <div class="bg-red">Cell</div>
-            <div class="bg-indigo">Cell</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522autogrid-300%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-md-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-cyan%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-indigo%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 355px;"
-        sandbox="allow-scripts allow-same-origin">
-        </iframe>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.grid-*</h2>
-        <p>These classes determine the number of columns for the grid for each breakpoint. Especially usefull when you want to control the number of columns for each breakpoint.</p>
-        <p>Here is a <b>.grid-2.grid-md-4</b> grid :</p>
-        <div class="grid-2 grid-md-4">
-            <div class="bg-black col-2 col-md-3">Cell</div>
-            <div class="bg-blue">Cell</div>
-            <div class="bg-red">Cell</div>
-            <div class="bg-gray">Cell</div>
-            <div class="bg-yellow">Cell</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-2%2520grid-md-4%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-2%2520col-md-3%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-gray%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 305px;"
-        sandbox="allow-scripts allow-same-origin">
-        </iframe>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.col-*</h2>
-        <p>These classes determine the width of the cells (how many columns) and add some padding (you can set $padding-col:0 in sass to disable it). Here is a complex example to show you different possibilities :</p>
-        <div class="grid-sm-12">
-            <div class="bg-black col-sm-9 col-md-12 col-lg-6 col-xl-4 col-xxl-10 start-xxl-2">.col-sm-9.col-md-12.col-lg-6.col-xl-4.col-xxl-10.start-xxl-2</div>
-            <div class="bg-blue col-sm-6 col-md-4 col-lg-6 col-xl-8">.col-sm-6.col-md-4.col-lg-6.col-xl-8</div>
-            <div class="bg-red col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
-            <div class="bg-cyan col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
-            <div class="bg-gray col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-sm-6.col-md-4.col-lg-3.col-xl-2</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-sm-9%2520col-md-12%2520col-lg-6%2520col-xl-4%2520col-xxl-10%2520start-xxl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-sm-6%2520col-md-4%2520col-lg-6%2520col-xl-8%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-cyan%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-gray%2520col-sm-6%2520col-md-4%2520col-lg-3%2520col-xl-2%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 305px;"
-        sandbox="allow-scripts allow-same-origin">
-      </iframe>      
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.start-*</h2>
-        <p>With these classes, you can specify the start-column for a cell.</p>
-        <div class="grid-12">
-            <div class="bg-black col-3 start-sm-3 start-md-5 start-lg-7 start-xl-9">.start-1.start-sm-3.start-md-5.start-lg-7.start-xl-9</div>
-            <div class="bg-blue col-3 start-4">.start-4</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2520col-3%2520start-sm-3%2520start-md-5%2520start-lg-7%2520start-xl-9%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-3%2520start-4%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 250px;"
-        sandbox="allow-scripts allow-same-origin">
-      </iframe>
-        <p>Here is anoher example :</p>
-        <div>
-            <div class="grid-12 g-0">
-                <div class="bg-blue col-3">.start-1</div>
-            </div>
-            <div class="grid-12 g-0">
-                <div class="bg-pink col-3 start-4">.start-4</div>
-            </div>
-            <div class="grid-12 g-0">
-                <div class="bg-red col-3 start-7">.start-7</div>
-            </div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2520col-3%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E%250D%250A%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2520col-3%2520start-4%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E%250D%250A%253Cdiv%2520class%253D%2522grid-12%2520g-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520col-3%2520start-7%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 340px;"
-        sandbox="allow-scripts allow-same-origin">
-      </iframe>      
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.g-*, .gx-*, .gy-*</h2>
-        <p>You can modify the gutters for a grid (value from 0 to 5).</p>
-        <div class="grid-3 gx-5 gy-0">
-            <div class="bg-black">Cell</div>
-            <div class="bg-blue">Cell</div>
-            <div class="bg-yellow">Cell</div>
-            <div class="bg-orange">Cell</div>
-            <div class="bg-indigo">Cell</div>
-            <div class="bg-pink">Cell</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-3%2520gx-5%2520gy-0%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-blue%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-indigo%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 320px;"
-        sandbox="allow-scripts allow-same-origin">
-      </iframe>      
-    </section>
-    <section class="grid-1 g-0">
-        <h2>.rounded-*, .round-circle</h2>
-        <p>From 0 to 5, you can choose the border-radius for a DOM element and its children.</p>
-        <div class="grid-2 grid-sm-3 grid-md-6 rounded-0 bg-blue">
-            <div class="bg-black">Inherit</div>
-            <div class="bg-red rounded-circle">.rounded-circle</div>
-            <div class="bg-orange rounded-0">.rounded-0</div>
-            <div class="bg-yellow rounded-1">.rounded-1</div>
-            <div class="bg-purple rounded-2">.rounded-2</div>
-            <div class="bg-pink rounded-3">.rounded-3</div>
-        </div>
-        <iframe
-        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=vscode&wt=none&l=htmlmixed&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fl=1&fm=Hack&fs=13px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid-2%2520grid-sm-3%2520grid-md-6%2520rounded-0%2520bg-blue%2522%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-black%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-red%2520rounded-circle%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-orange%2520rounded-0%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-yellow%2520rounded-1%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-purple%2520rounded-2%2522%253E...%253C%252Fdiv%253E%250D%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522bg-pink%2520rounded-3%2522%253E...%253C%252Fdiv%253E%250D%250A%253C%252Fdiv%253E"
-        style="height: 320px;"
-        sandbox="allow-scripts allow-same-origin">
-      </iframe>      
-    </section>
-    <section class="grid-1 g-0">
-        <h2>Forms</h2>
-        <form class="grid-1 g-0 purple">
-            <div class="grid-1 g-1 col-1">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                <p id="emailHelp">We'll never share your email with anyone else.</p>
-            </div>
-            <div class="grid-1 g-1 col-1">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" id="exampleInputPassword1">
-            </div>
-            <div class="col-1">
-                <input type="checkbox" id="exampleCheck1"><label for="exampleCheck1">Check me out</label>
-            </div>
-            <div class="col-1">
-                <div>
-                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label for="flexRadioDefault1">Default radio</label>
+<body>
+    <header>
+        <div class="bg-secondary">
+            <div class="container d-flex">
+                <div class="h3 text-light">
+                    GridLayout documentation
                 </div>
-                <div>
-                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label for="flexRadioDefault2">Default checked radio</label>
+                <nav>
+                    <ul class="d-flex">
+                        <li class="active"><a href="index.html">Core</a></li>
+                        <li><a href="colors.html">Colors</a></li>
+                        <li><a href="helpers.html">Helpers</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-primary">
+            <div class="container">
+                <h1>The core</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container grid">
+        <main class="col-md-9">
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>GridLayout is a light-weight CSS library to theme and build responsive websites with new CSS components (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">CSS Grid</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">CSS Custom properties</a>) and <a href="https://sass-lang.com" target="_blank">Sass</a>. Two compressed CSS files are provided :</p>
+                <ul>
+                    <li>css/gridlayout-full.min.css (25ko)</li>
+                    <li>css/gridlayout-grid-only.min.css (8ko)</li>
+                </ul>
+                <p>Just import the one you want to use in your project :</p>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Clink%2520rel%253D%2522stylesheet%2522%2520href%253D%2522..%252Fcss%252Fgridlayout-full.min.css%2522%253E"
+                style="height: 201px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+            <section id="breakpoints">
+                <h2>Breakpoints</h2>
+                <p>By default, GridLayout uses the same breakpoints as <a href="https://getbootstrap.com" target="_blank">Bootstrap</a> for responsiveness. Some of classes use these class infixes so as not to disturb Bootstrap regular users :</p>
+                <div class="table-responsive">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Breakpoint</th>
+                                <th>Class infix {breakpoint}</th>
+                                <th>Dimensions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X-Small</td>
+                                <td><em>None</em></td>
+                                <td>&lt;576px</td>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td><code>sm</code></td>
+                                <td>≥576px</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                <td><code>md</code></td>
+                                <td>≥768px</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                <td><code>lg</code></td>
+                                <td>≥992px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra large</td>
+                                <td><code>xl</code></td>
+                                <td>≥1200px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra extra large</td>
+                                <td><code>xxl</code></td>
+                                <td>≥1400px</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <div class="col-1">
-                <label for="customRange1">Example range</label>
-                <input type="range" id="customRange1">
-            </div>
-            <div class="col-1">
-                <select aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-            <div class="col-1">
-                <select multiple size="3" aria-label="multiple select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-            </div>
-            <div class="col-1"><button type="submit">Submit</button></div>
-        </form>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>Display utilities</h2>
-        <ul>
-            <li>.d-none {display: none;}</li>
-            <li>.d-inline-block {display: inline-block;}</li>
-            <li>.d-block {display: block;}</li>
-            <li>.d-flex {display: flex;}</li>
-            <li>.d-grid {display: grid;}</li>
-        </ul>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>Background colors</h2>
-        <p>Colors helpers can be disabled in Sass with the boolean $use_color_helpers. Moreover, automatic contrasts are optimized with $light and $dark in Sass.</p>
-        <div class="autogrid-150">
-            <div class="bg-primary border-black-1">.bg-primary</div>
-            <div class="bg-secondary border-black-1">.bg-secondary</div>
-            <div class="bg-light border-black-1">.bg-light</div>
-            <div class="bg-dark border-black-1">.bg-dark</div>
-            <div class="bg-blue border-black-1">.bg-blue</div>
-            <div class="bg-indigo border-black-1">.bg-indigo</div>
-            <div class="bg-purple border-black-1">.bg-purple</div>
-            <div class="bg-pink border-black-1">.bg-pink</div>
-            <div class="bg-red border-black-1">.bg-red</div>
-            <div class="bg-orange border-black-1">.bg-orange</div>
-            <div class="bg-yellow border-black-1">.bg-yellow</div>
-            <div class="bg-green border-black-1">.bg-green</div>
-            <div class="bg-teal border-black-1">.bg-teal</div>
-            <div class="bg-cyan border-black-1">.bg-cyan</div>
-            <div class="bg-white border-black-1">.bg-white</div>
-            <div class="bg-gray-light border-black-1">.bg-gray-light</div>
-            <div class="bg-gray border-black-1">.bg-gray</div>
-            <div class="bg-gray-dark border-black-1">.bg-gray-dark</div>
-            <div class="bg-black border-black-1">.bg-black</div>
-        </div>
-    </section>
-    <section class="grid-1 g-0">
-        <h2>Font colors</h2>
-        <div class="autogrid-100">
-            <div class="primary border-black-1">.primary</div>
-            <div class="secondary border-black-1">.secondary</div>
-            <div class="light border-black-1">.light</div>
-            <div class="dark border-black-1">.dark</div>
-            <div class="blue border-black-1">.blue</div>
-            <div class="indigo border-black-1">.indigo</div>
-            <div class="purple border-black-1">.purple</div>
-            <div class="pink border-black-1">.pink</div>
-            <div class="red border-black-1">.red</div>
-            <div class="orange border-black-1">.orange</div>
-            <div class="yellow border-black-1">.yellow</div>
-            <div class="green border-black-1">.green</div>
-            <div class="teal border-black-1">.teal</div>
-            <div class="cyan border-black-1">.cyan</div>
-            <div class="white border-black-1">.white</div>
-            <div class="gray-light border-black-1">.gray-light</div>
-            <div class="gray border-black-1">.gray</div>
-            <div class="gray-dark border-black-1">.gray-dark</div>
-            <div class="black border-black-1">.black</div>
-        </div>
-    </section>
-    <footer></footer>
+            </section>
+            <section id="containers">
+                <h2>Containers</h2>
+                <p>Containers are usefull to wrap your content. They apply a padding stored in a CSS Custom Property called <code>--container-padding</code>. Here are the two classes :</p>
+                <ul>
+                    <li><code>.container</code> (is a responsive, fixed-width container, meaning its max-width changes at each breakpoint)</li>
+                    <li><code>.container-fluid</code> (for a full-width container)</li>
+                </ul>
+            </section>
+            <section id="grid">
+                <h2>The grid</h2>
+                <p>Use the <code>.grid</code> class to get a grid composed of 12 columns. All its children are 12 columns width and have a padding defined by the CSS Custom Property called <code>--col-padding</code>.</p>
+            </section>
+            <section id="columns">
+                <h2>Columns</h2>
+                <p>The children of the <code>.grid</code> wrapper are 12 columns width by default. You can define the width for each column with these responsive classes :</p>
+                <ul>
+                    <li><code>.col-{size}</code></li>
+                    <li><code>.col-{breakpoint}</code></li>
+                    <li><code>.col-{breakpoint}-{size}</code></li>
+                </ul>
+                <p><code>{size}</code> is between 1 and 11.</p>
+                <div class="grid example">
+                    <h3>h3 Heading</h3>
+                    <div class="col-md-5">.col-md-5</div>
+                    <div class="col-md-7">.col-md-7</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Ch3%253Eh3%2520Heading%253C%252Fh3%253E%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522col-md-5%2522%253E.col-md-5%253C%252Fdiv%253E%250A%2520%2520%2520%2520%253Cdiv%2520class%253D%2522col-md-7%2522%253E.col-md-7%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 286px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+            <section id="row-spanning">
+                <h2>Row spanning</h2>
+                <p>You can span rows with the <code>.row-{size}</code> and the <code>.row-{breakpoint}-{size}</code> classes. <code>{size}</code> is between 2 and 5.</p>
+                <div class="grid example">
+                    <div class="col-md-5 row-lg-2">.col-md-5.row-lg-2</div>
+                    <div class="col-md-7">.col-md-7</div>
+                    <div class="col-md-7">.col-md-7</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-5%2520row-lg-2%2522%253E.col-md-5.row-lg-2%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-7%2522%253E.col-md-7%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-7%2522%253E.col-md-7%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 286px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+            <section id="offset">
+                <h2>Offset</h2>
+                <p>You can offset columns by using the <code>.start-{position}</code> and the <code>.start-{breakpoint}-{position}</code> classes. <code>{position}</code> is between 1 and 11.</p>
+                <div class="grid example">
+                    <div class="col-md-4">.col-md-4</div>
+                    <div class="col-md-4 start-md-7">.col-md-4.start-md-7</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-4%2522%253E.col-md-4%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-4%2520start-md-7%2522%253E.col-md-4.start-md-7%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 265px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+            <section id="gutters">
+                <h2>Gutters</h2>
+                <p>You can add gutters to your grid by using the following classes :</p>
+                <ul>
+                    <li><code>.g-{size}</code></li>
+                    <li><code>.gx-{size}</code> for horizontal gutters</li>
+                    <li><code>.gy-{size}</code> for vertical gutters</li>
+                </ul>
+                <p><code>{size}</code> is between 1 and 5.</p>
+                <div class="grid example g-2">
+                    <div class="col-md-6">.col-md-6</div>
+                    <div class="col-md-6">.col-md-6</div>
+                    <div class="col-md-6">.col-md-6</div>
+                    <div class="col-md-6">.col-md-6</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520g-2%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E.col-md-6%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E.col-md-6%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E.col-md-6%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E.col-md-6%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 308px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+        </main>
+        <aside class="col-md-3">
+            <nav>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#breakpoints">Breakpoints</a></li>
+                    <li><a href="#containers">Containers</a></li>
+                    <li><a href="#grid">The Grid</a></li>
+                    <li><a href="#columns">Columns</a></li>
+                    <li><a href="#row-spanning">Row spanning</a></li>
+                    <li><a href="#offset">Offset</a></li>
+                    <li><a href="#gutters">Gutters</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <footer>
+        <p class="container">Fork this project on <a href="https://github.com/paidge/gridlayout" target="_blank">Github</a>.</p>
+    </footer>
+    <button id="back-to-top"></button>
+    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout documentation</title>
+    <link rel="stylesheet" href="../css/gridlayout-full.min.css">
+    <link rel="stylesheet" href="../css/doc.min.css">
+</head>
+<body>
+    <header>
+        <div class="bg-secondary">
+            <div class="container d-flex">
+                <div class="h3 text-light">
+                    GridLayout documentation
+                </div>
+                <nav>
+                    <ul class="d-flex">
+                        <li><a href="index.html">Core</a></li>
+                        <li class="active"><a href="colors.html">Colors</a></li>
+                        <li><a href="helpers.html">Helpers</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-primary">
+            <div class="container">
+                <h1>The colors</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container grid">
+        <main class="col-md-9">
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>The library provides 4 basic colors in the "grid only" version and adds 4 theme colors in the full version.</p>
+                <div class="grid example">
+                    <div class="col-12"><b>Basic colors</b></div>
+                    <div class="col-6 col-sm-3">primary</div>
+                    <div class="col-6 col-sm-3 bg-primary"></div>
+                    <div class="col-6 col-sm-3">secondary</div>
+                    <div class="col-6 col-sm-3 bg-secondary"></div>
+                    <div class="col-6 col-sm-3">light</div>
+                    <div class="col-6 col-sm-3 bg-light"></div>
+                    <div class="col-6 col-sm-3">dark</div>
+                    <div class="col-6 col-sm-3 bg-dark"></div>
+                    <div class="col-12"><b>Theme colors</b></div>
+                    <div class="col-6 col-sm-3">theme1</div>
+                    <div class="col-6 col-sm-3 bg-theme1"></div>
+                    <div class="col-6 col-sm-3">theme2</div>
+                    <div class="col-6 col-sm-3 bg-theme2"></div>
+                    <div class="col-6 col-sm-3">theme3</div>
+                    <div class="col-6 col-sm-3 bg-theme3"></div>
+                    <div class="col-6 col-sm-3">theme4</div>
+                    <div class="col-6 col-sm-3 bg-theme4"></div>
+                </div>
+            </section>
+            <section id="css-components">
+                <h2>CSS components</h2>
+                <p>You can customize these colors directly in CSS by using the appropriate CSS component <code>--{color}</code>.</p>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=css&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=--primary%253A%2520%2523007bff%253B%250A--secondary%253A%2520%25236c757d%253B%250A--light%253A%2520%2523f8f9fa%253B%250A--dark%253A%2520%2523000%253B%250A--theme1%253A%2520%2523198754%253B%250A--theme2%253A%2520%25230dcaf0%253B%250A--theme3%253A%2520%2523ffc107%253B%250A--theme4%253A%2520%2523dc3545%253B"
+                style="height: 473px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe> 
+            </section>
+            <section id="text">
+                <h2>Text</h2>
+                <p>The <code>--default-font-color</code> CSS component defines the font color for the <code>html</code> and <code>body</code> elements and is usable only for <code>:root</code>.</p>
+                <p>Use the <code>text-{color}</code> classes to apply the appropriate color to the text.</p>
+                <div class="grid example">
+                    <div class="text-theme1">.text-theme1</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522text-theme1%2522%253E.text-theme1%253C%252Fdiv%253E"
+                style="height: 207px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>  
+            </section>
+            <section id="borders">
+                <h2>Borders</h2>
+                <p>Use the <code>.border</code> and the <code>.border-{size}</code> classes to apply a border whose the color is defined by the <code>--border-color</code> CSS component.</p>
+                <p>Use the <code>border-{color}</code> and the <code>border-{color}-{size}</code> classes to apply a border with the appropriate color.</p>
+                <p><code>{size}</code> is between 2 and 5.</p>
+                <div class="grid example">
+                    <div class="border-theme4-3">.border-theme4-3</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522border-theme4-3%2522%253E.border-theme4-3%253C%252Fdiv%253E"
+                style="height: 207px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>  
+            </section>
+            <section id="background">
+                <h2>Background</h2>
+                <p>You can use the <code>.bg-{color}</code> classes or the <code>--bg-color</code> CSS component.</p>
+                <div class="grid">
+                    <div class="bg-theme2">.bg-theme2</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522bg-theme2%2522%253E.bg-theme2%253C%252Fdiv%253E"
+                style="height: 207px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </section>
+            <section id="themes">
+                <h2>Themes</h2>
+                <p>The <code>.{color}</code> classes are equivalent to the <code>.text-{color}</code> classes. In addition, they overload the <code>--primary</code>, the <code>--inv-primary</code>, the <code>--focus-shadow</code> and the <code>--border-color</code> CSS components with the appropriate colors. They are usefull for wrappers.</p>
+                <div class="grid example theme4">
+                    <div class="border-1 text-primary">.border-1.text-primary</div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520theme4%2522%253E%250A%2509%253Cdiv%2520class%253D%2522border-1%2520text-primary%2522%253E.border-1.text-primary%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 250px;"
+                sandbox="allow-scripts allow-same-origin">
+                </iframe>  
+            </section>
+        </main>
+        <aside class="col-md-3">
+            <nav>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#css-components">CSS components</a></li>
+                    <li><a href="#text">Text</a></li>
+                    <li><a href="#borders">Borders</a></li>
+                    <li><a href="#background">Background</a></li>
+                    <li><a href="#themes">Themes</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <footer>
+        <p class="container">Fork this project on <a href="https://github.com/paidge/gridlayout" target="_blank">Github</a>.</p>
+    </footer>
+    <button id="back-to-top"></button>
+    <script src="./js/main.js"></script>
+</body>
+</html>

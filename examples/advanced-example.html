@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/gridlayout-full.min.css">
+    <title>Avanced example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Avanced example</h1>
+        <div class="grid g-3">
+            <header class="col-xxl-10 start-xxl-2 bg-dark text-light"><h2>Header</h2></header>
+            <aside class="col-md-3 bg-theme4">
+                <div class="bg-theme2">
+                    <h2>Aside 1</h2>
+                </div>
+                <div class="bg-theme1">
+                    <h2>Aside 2</h2>
+                </div>
+            </aside>
+            <main class="col-md-9 grid g-2 bg-primary round-4 row-lg-2">
+                <h2>Main</h2>
+                <section class="col-lg-5 col-xxl-4 bg-theme4 grid">
+                    <h3>Section 1</h3>
+                    <img src="https://picsum.photos/400?random=1" class="col-6 col-lg-4 img-thumbnail">
+                    <img src="https://picsum.photos/400?random=2" class="col-6 col-lg-4 img-thumbnail">
+                    <img src="https://picsum.photos/400?random=3" class="col-4 img-thumbnail">
+                </section>
+                <section class="col-lg-7 col-xxl-5 row-xl-3 bg-light border-theme4-4">
+                    <h3>Section 2</h3>
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Breakpoint</th>
+                                <th>Class infix</th>
+                                <th>Dimensions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X-Small</td>
+                                <td><em>None</em></td>
+                                <td>&lt;576px</td>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td><code>sm</code></td>
+                                <td>≥576px</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                <td><code>md</code></td>
+                                <td>≥768px</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                <td><code>lg</code></td>
+                                <td>≥992px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra large</td>
+                                <td><code>xl</code></td>
+                                <td>≥1200px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra extra large</td>
+                                <td><code>xxl</code></td>
+                                <td>≥1400px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="col-lg-6 col-xxl-3 bg-theme2">
+                    <h3>Section 3</h3>
+                    <a href="#">link</a>
+                </section>
+                <section class="col-lg-6 col-xxl-4 bg-theme1">
+                    <h3>Section 4</h3>
+                </section>
+                <section class="col-lg-6 col-xxl-4 bg-theme3">
+                    <h3>Section 5</h3>
+                    <div class="grid">
+                        <div class="col-lg-6">test</div>
+                        <div class="col-lg-6">test</div>
+                    </div>
+                </section>
+                <section class="bg-theme2 grid">
+                    <h3>Section 6</h3>
+                    <form class="grid theme4">
+                        <div class="grid">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <p id="emailHelp">We'll never share your email with anyone else.</p>
+                        </div>
+                        <div class="grid">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" id="exampleInputPassword1">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="exampleCheck1"><label for="exampleCheck1">Check me out</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label for="flexRadioDefault1">Default radio</label>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label for="flexRadioDefault2">Default checked radio</label>
+                        </div>
+                        <div class="grid">
+                            <label for="customRange1">Example range</label>
+                            <input type="range" id="customRange1">
+                        </div>
+                        <div>
+                            <select aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select multiple size="3" aria-label="multiple select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="d-flex" style="justify-content: space-around;">
+                            <button type="submit" class="btn-slide">
+                                <span>Button</span><span>➜</span>
+                            </button>
+                            <a href="#" class="btn-slide">
+                                <span>Link</span><span>➜</span>
+                            </a>
+                        </div>
+                    </form>
+                </section>
+            </main>
+            <footer class="grid gx-4 bg-secondary">
+                <h2>Footer</h2>
+                <article class="col-sm-4 bg-theme4">Article 1</article>
+                <article class="col-sm-4 bg-dark text-light">Article 2</article>
+                <article class="col-sm-4 bg-theme1">Article 3</article>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout documentation</title>
+    <link rel="stylesheet" href="../css/gridlayout-full.min.css">
+    <link rel="stylesheet" href="../css/doc.min.css">
+</head>
+<body>
+    <header>
+        <div class="bg-secondary">
+            <div class="container d-flex">
+                <div class="h3 text-light">
+                    GridLayout documentation
+                </div>
+                <nav>
+                    <ul class="d-flex">
+                        <li><a href="index.html">Core</a></li>
+                        <li><a href="colors.html">Colors</a></li>
+                        <li><a href="helpers.html">Helpers</a></li>
+                        <li class="active"><a href="customize.html">Customize</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-primary">
+            <div class="container">
+                <h1>Customize</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container grid">
+        <main class="col-md-9">
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>The gridLayout library can be customized by two ways. The first-one is to overload CSS components (variables) and CSS rules of the library and the second one is to write your own SCSS file and to compile it.</p>
+            </section>
+            <section id="css-components">
+                <h2>CSS components</h2>
+                <p>Here are the <code>:root</code> CSS components :</p>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=css&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=--col-padding%253A%25200.5rem%253B%250A--container-padding%253A%25201rem%253B%250A--radius%253A%25200.25rem%253B%250A--font%253A%2520system-ui%252C%2520-apple-system%252C%2520Segoe%2520UI%252C%2520Roboto%252C%2520Helvetica%2520Neue%252C%2520Arial%252C%2520Noto%2520Sans%252C%2520Liberation%2520Sans%252C%2520sans-serif%252C%2520Apple%2520Color%2520Emoji%252C%2520Segoe%2520UI%2520Emoji%252C%2520Segoe%2520UI%2520Symbol%252C%2520Noto%2520Color%2520Emoji%253B%250A--default-font-color%253A%2520%2523343a40%253B%250A--focus-shadow%253A%2520rgba%2813%252C%2520123%252C%2520242%252C%25200.25%29%253B%250A--border-color%253A%2520var%28--default-font-color%29%253B%250A--primary%253A%2520%2523007bff%253B%250A--secondary%253A%2520%25236c757d%253B%250A--light%253A%2520%2523f8f9fa%253B%250A--dark%253A%2520%2523000%253B%250A--inv-primary%253A%2520%2523000%253B%250A--theme1%253A%2520%2523198754%253B%250A--theme2%253A%2520%25230dcaf0%253B%250A--theme3%253A%2520%2523ffc107%253B%250A--theme4%253A%2520%2523dc3545%253B%250A--bg-color%253A%2520%2523fff%253B"
+                style="height: 606px;"
+                sandbox="allow-scripts allow-same-origin">
+              </iframe>              
+                </iframe>
+            </section>
+            <section id="sass">
+                <h2>Sass</h2>
+                <p>This library has been developped with <a href="https://sass-lang.com" target="_blank">sass</a> and you can customize all the variables, functions and mixins to generate your own CSS file. You can find an example in the <code>SCSS</code> folder of this project.</p>
+            </section>
+        </main>
+        <aside class="col-md-3">
+            <nav>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#css-components">CSS component</a></li>
+                    <li><a href="#sass">Sass</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <footer>
+        <p class="container"><img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" class="img-fluid"> Fork this project on <a href="https://github.com/paidge/gridlayout" target="_blank">Github</a>.</p>
+    </footer>
+    <button id="back-to-top"></button>
+    <script src="./js/main.js"></script>
+</body>
+</html>

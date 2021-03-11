@@ -5,7 +5,6 @@
 // MIT License
 
 $track-color: $gray-400 !default;
-$thumb-color: $primary !default;
 
 $thumb-radius: 12px !default;
 $thumb-height: 24px !default;
@@ -28,7 +27,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 }
   
 @mixin thumb {
-  background: $thumb-color;
+  background: var(--primary);
   border-radius: $thumb-radius;
   box-sizing: border-box;
   cursor: default;
@@ -56,13 +55,16 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
   &:focus {
     &::-moz-range-thumb {
-      @include form_focus($primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
     &::-webkit-slider-thumb {
-      @include form_focus($primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
     &::-ms-thumb {
-      @include form_focus($primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
 
     &::-webkit-slider-runnable-track {

@@ -1,0 +1,36 @@
+// Overloadings + definitions for variables
+$myvar : rgba(200,25,152,.8);
+$primary: #4d20a0;
+// Replace the default theme color names
+$theme-colors: (
+  "main":       rgb(211, 116, 7),
+  "myColor":    rgb(230, 199, 117),
+  "myColor2":   rgb(187, 20, 20),
+  "myColor3":   rgb(78, 184, 78)
+);
+$border-radius:0;
+
+@import './inc/variables';
+@import './inc/functions';
+@import './inc/mixins';
+@import './inc/core';
+@import './inc/nav';
+@import './inc/colors';
+@import './inc/typo';
+@import './inc/helpers';
+@import './inc/images';
+@import './inc/tables';
+@import './inc/forms';
+
+// Your custom rules
+
+.myClass {
+    @extend .d-grid;
+    --radius: .5rem;
+    --bg-color: #{$indigo-200};
+    border-color: $primary;
+    div:first-of-type {
+        color: $myvar;
+        grid-row: auto / span 2;
+    }
+}

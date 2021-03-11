@@ -1,0 +1,58 @@
+.border {
+    border: 1px solid var(--border-color);
+}
+@for $i from 2 through 5 {
+    .border-#{$i} {
+        border: #{$i*1px} solid var(--border-color);
+    }
+}
+
+@each $name, $color in $main-colors {
+    .#{$name} {
+        --primary:var(--#{$name});
+        --inv-primary: #{a11y-color($color)};
+        --focus-shadow: #{rgba(desaturate($color,10%),.25)};
+        --border-color: var(--#{$name});
+        color: var(--primary);
+    }
+    .text-#{$name} {
+        color: var(--#{$name});
+    }
+    .bg-#{$name} {
+        --bg-color: var(--#{$name});
+    }
+    .border-#{$name} {
+        border: 1px solid var(--#{$name});
+    }
+    @for $i from 2 through 5 {
+        .border-#{$name}-#{$i} {
+            border: #{$i*1px} solid var(--#{$name});
+        }
+    }
+}
+
+@if $use-theme-colors {
+    @each $name, $color in $theme-colors {
+        .#{$name} {
+            --primary:var(--#{$name});
+            --inv-primary: #{a11y-color($color)};
+            --focus-shadow: #{rgba(desaturate($color,10%),.25)};
+            --border-color: var(--#{$name});
+            color: var(--primary);
+        }
+        .text-#{$name} {
+            color: var(--#{$name});
+        }
+        .bg-#{$name} {
+            --bg-color: var(--#{$name});
+        }
+        .border-#{$name} {
+            border: 1px solid var(--#{$name});
+        }
+        @for $i from 2 through 5 {
+            .border-#{$name}-#{$i} {
+                border: #{$i*1px} solid var(--#{$name});
+            }
+        }
+    }
+}

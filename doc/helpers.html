@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout documentation</title>
+    <link rel="stylesheet" href="../css/gridlayout-full.min.css">
+    <link rel="stylesheet" href="../css/doc.min.css">
+</head>
+<body>
+    <header>
+        <div class="bg-secondary">
+            <div class="container d-flex">
+                <div class="h3 text-light">
+                    GridLayout documentation
+                </div>
+                <nav>
+                    <ul class="d-flex">
+                        <li><a href="index.html">Core</a></li>
+                        <li><a href="colors.html">Colors</a></li>
+                        <li class="active"><a href="helpers.html">Helpers</a></li>
+                        <li><a href="customize.html">Customize</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-primary">
+            <div class="container">
+                <h1>The helpers</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container grid">
+        <main class="col-md-9">
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>To facilitate front developement, the library provides some helper classes.</p>
+            </section>
+            <section id="headings">
+                <h2>Headings</h2>
+                <p>You can use <code>.h1</code> to <code>.h6</code> classes to apply the same responsive font size than headings.</p>
+            </section>
+            <section id="images">
+                <h2>Images</h2>
+                <p>The library provides two responsive classes : <code>.img-fluid</code> and <code>.img-thumbnail</code>. The second extends the first one (max-width : 100% and height : auto).</p>
+                <div class="grid">
+                    <div class="col-md-6"><img src="https://picsum.photos/500/300" class="img-fluid"></div>
+                    <div class="col-md-6"><img src="https://picsum.photos/660/400" class="img-thumbnail"></div>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-fluid%2522%253E%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-thumbnail%2522%253E%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                style="height: 265px;"
+                sandbox="allow-scripts allow-same-origin">
+              </iframe>              
+            </section>
+            <section id="display">
+                <h2>Display</h2>
+                <p>The libray provides the following classes : </p>
+                <ul>
+                    <li><code>.d-none</code></li>
+                    <li><code>.d-block</code></li>
+                    <li><code>.d-inline-block</code></li>
+                    <li><code>.d-flex</code></li>
+                    <li><code>.d-grid</code></li>
+                </ul>
+            </section>
+            <section id="radius">
+                <h2>Border-radius</h2>
+                <p>You can use <code>.round-circle</code> and <code>.round-{size}</code> classes to apply a border-radius. <code>{size}</code> is between 0 and 5.</p>
+                <div class="grid">
+                    <div class="col-1 round-circle bg-theme2">.round-circle</div>
+                    <div class="col-5 round-4 start-3 bg-theme1">.round-4</div>
+                </div>
+            </section>
+            <section id="tables">
+                <h2>Tables</h2>
+                <p>Add <code>.table-striped</code> class to your table in order to highlight even and odd lines. You can also wrap your table with the <code>.table-responsive</code> class (in a <code>.grid</code>).</p>
+                <div class="grid table-responsive">
+                    <table class="table-striped">
+                        <thead>
+                            <tr>
+                                <th>Heading 1</th>
+                                <th>Heading 2</th>
+                                <th>Heading 3</th>
+                                <th>Heading 4</th>
+                                <th>Heading 5</th>
+                                <th>Heading 6</th>
+                                <th>Heading 7</th>
+                                <th>Heading 8</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <iframe tabindex=-1
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520table-responsive%2522%253E%250A%2520%2520%2520%2520%253Ctable%2520class%253D%2522table-striped%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Cthead%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Cth%253EHeading%25201%253C%252Fth%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Cth%253EHeading%25202%253C%252Fth%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Fthead%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ctbody%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EContent%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftbody%253E%250A%2520%2520%2520%2520%253C%252Ftable%253E%250A%253C%252Fdiv%253E"
+                style="height: 691px;"
+                sandbox="allow-scripts allow-same-origin">
+              </iframe>              
+            </section>
+            <section id="forms">
+                <h2>Forms</h2>
+                <form class="grid">
+                    <div class="grid">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <p id="emailHelp">We'll never share your email with anyone else.</p>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Clabel%2520for%253D%2522exampleInputEmail1%2522%253EEmail%2520address%253C%252Flabel%253E%250A%2509%253Cinput%2520type%253D%2522email%2522%2520id%253D%2522exampleInputEmail1%2522%2520aria-describedby%253D%2522emailHelp%2522%2520required%253E%250A%2509%253Cp%2520id%253D%2522emailHelp%2522%253EWe%27ll%2520never%2520share%2520your%2520email%2520with%2520anyone%2520else.%253C%252Fp%253E%250A%253C%252Fdiv%253E"
+                    style="height: 302px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div class="grid">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" id="exampleInputPassword1">
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Clabel%2520for%253D%2522exampleInputPassword1%2522%253EPassword%253C%252Flabel%253E%250A%2509%253Cinput%2520type%253D%2522password%2522%2520id%253D%2522exampleInputPassword1%2522%253E%250A%253C%252Fdiv%253E"
+                    style="height: 281px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <input type="checkbox" id="exampleCheck1">
+                        <label for="exampleCheck1">Check me out</label>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cinput%2520type%253D%2522checkbox%2522%2520id%253D%2522exampleCheck1%2522%253E%250A%2509%253Clabel%2520for%253D%2522exampleCheck1%2522%253ECheck%2520me%2520out%253C%252Flabel%253E%250A%253C%252Fdiv%253E"
+                    style="height: 281px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <div>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label for="flexRadioDefault1">Default radio</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label for="flexRadioDefault2">Default checked radio</label>
+                        </div>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cdiv%253E%250A%2509%2509%253Cinput%2520type%253D%2522radio%2522%2520name%253D%2522flexRadioDefault%2522%2520id%253D%2522flexRadioDefault1%2522%253E%250A%2509%2509%253Clabel%2520for%253D%2522flexRadioDefault1%2522%253EDefault%2520radio%253C%252Flabel%253E%250A%2509%253C%252Fdiv%253E%250A%2509%253Cdiv%253E%250A%2509%2509%253Cinput%2520type%253D%2522radio%2522%2520name%253D%2522flexRadioDefault%2522%2520id%253D%2522flexRadioDefault2%2522%2520checked%253E%250A%2509%2509%253Clabel%2520for%253D%2522flexRadioDefault2%2522%253EDefault%2520checked%2520radio%253C%252Flabel%253E%250A%2509%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                    style="height: 409px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <label for="customRange1">Example range</label>
+                        <input type="range" id="customRange1">
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Clabel%2520for%253D%2522customRange1%2522%253EExample%2520range%253C%252Flabel%253E%250A%2509%253Cinput%2520type%253D%2522range%2522%2520id%253D%2522customRange1%2522%253E%250A%253C%252Fdiv%253E"
+                    style="height: 281px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <select aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cselect%2520aria-label%253D%2522Default%2520select%2520example%2522%253E%250A%2509%2509%253Coption%2520selected%253EOpen%2520this%2520select%2520menu%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25221%2522%253EOne%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25222%2522%253ETwo%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25223%2522%253EThree%253C%252Foption%253E%250A%2509%253C%252Fselect%253E%250A%253C%252Fdiv%253E"
+                    style="height: 366px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <select multiple size="3" aria-label="multiple select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cselect%2520multiple%2520size%253D%25223%2522%2520aria-label%253D%2522multiple%2520select%2520example%2522%253E%250A%2509%2509%253Coption%2520selected%253EOpen%2520this%2520select%2520menu%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25221%2522%253EOne%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25222%2522%253ETwo%253C%252Foption%253E%250A%2509%2509%253Coption%2520value%253D%25223%2522%253EThree%253C%252Foption%253E%250A%2509%253C%252Fselect%253E%250A%253C%252Fdiv%253E"
+                    style="height: 366px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div><button type="submit">Submit</button></div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%253Cbutton%2520type%253D%2522submit%2522%253ESubmit%253C%252Fbutton%253E%253C%252Fdiv%253E"
+                    style="height: 217px;"
+                    sandbox="allow-scripts allow-same-origin">
+                    </iframe>
+                    <div>
+                        <button class="btn-slide">
+                            <span>.btn-slide</span><span>➜</span>
+                        </button>
+                    </div>
+                    <iframe tabindex=-1
+                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cbutton%2520class%253D%2522btn-slide%2522%253E%250A%2509%2509%253Cspan%253E.btn-slide%253C%252Fspan%253E%253Cspan%253E%25E2%259E%259C%253C%252Fspan%253E%250A%2509%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
+                    style="height: 302px;"
+                    sandbox="allow-scripts allow-same-origin">
+                  </iframe>                  
+                </form>
+            </section>
+        </main>
+        <aside class="col-md-3">
+            <nav>
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#headings">Headings</a></li>
+                    <li><a href="#images">Images</a></li>
+                    <li><a href="#display">Display</a></li>
+                    <li><a href="#radius">Border-radius</a></li>
+                    <li><a href="#tables">Tables</a></li>
+                    <li><a href="#forms">Forms</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <footer>
+        <p class="container">Fork this project on <a href="https://github.com/paidge/gridlayout" target="_blank">Github</a>.</p>
+    </footer>
+    <button id="back-to-top"></button>
+    <script src="./js/main.js"></script>
+</body>
+</html>

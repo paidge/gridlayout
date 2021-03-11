@@ -1,0 +1,100 @@
+:root {
+    --col-padding: #{$col-padding};
+    --container-padding: #{$container-padding};
+    --radius: #{$border-radius};
+    --font: #{$font-family};
+    --default-font-color: #{$default-font-color};
+    @if $use-theme-colors {
+        --focus-shadow: #{rgba(desaturate($primary,10%),.25)};
+        --border-color: var(--default-font-color);
+        @each $name, $color in $main-colors {
+            --#{$name}: #{$color};
+        }
+        --inv-primary: #{a11y-color($primary)};
+        @each $name, $color in $theme-colors {
+            --#{$name}: #{$color};
+        }
+    }
+    --bg-color: #{$white};
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+*{
+    background-color: var(--bg-color);
+    border-radius: var(--radius);
+    font-family: var(--font);
+}
+
+html, body {
+    color : var(--default-font-color);
+    margin: 0;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+// Container
+.container, .container-fluid {
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: min-content;
+    grid-template-columns: repeat($nb_columns, 1fr);
+    & > * {
+        padding: var(--col-padding);
+        grid-column: 1 / -1;
+    }
+}
+
+@for $i from 1 through 5 {
+    .g-#{$i}, .gx-#{$i} {
+        column-gap: map-get($gutters , $i );
+    }
+    .g-#{$i}, .gy-#{$i} {
+        row-gap: map-get($gutters , $i );
+    }
+    @if 1 < $i {
+        .row-#{$i} {
+            grid-row: auto / span $i;
+        }
+    }
+}
+
+@for $i from 1 through ($nb_columns - 1) {
+    .col-#{$i} {
+        grid-column: auto / span $i;
+    }
+    .grid .start-#{$i} {
+        grid-column-start: $i;
+    }
+}
+
+@each $breakpoint, $size in $grid-breakpoints {
+    @media screen and (min-width:#{$size}){
+        .container {
+            max-width: $size*$container-width-coef;
+        }
+        .col-#{$breakpoint} {
+            grid-column: 1 / -1;
+        }
+        @for $i from 1 through ($nb_columns - 1) {
+            .col-#{$breakpoint}-#{$i} {
+                grid-column: auto / span $i;
+            }
+            .grid .start-#{$breakpoint}-#{$i} {
+                grid-column-start: $i;
+            }
+        }
+        @for $i from 2 through 5 {
+            .row-#{$breakpoint}-#{$i} {
+                grid-row: auto / span $i;
+            }
+        }
+    }
+}

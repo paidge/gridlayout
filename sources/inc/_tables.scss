@@ -1,4 +1,6 @@
 table {
+    --radius:0;
+    width: 100%;
     border-spacing: 0;
     border-color: $gray-400;
     & > thead {
@@ -22,5 +24,13 @@ th {
 }
 
 .table-striped > tbody > tr:nth-of-type(2n+1) {
-    background-color: rgba($black,0.08);
+    --bg-color: undefined;
+    background-color: rgba(0,0,0,0.08);
+}
+
+
+// Wrapper for responsive tables
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }

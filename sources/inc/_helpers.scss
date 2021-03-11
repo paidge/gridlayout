@@ -1,0 +1,38 @@
+// Display helpers
+
+$d-helpers: (
+  none,
+  block,
+  inline-block,
+  flex,
+  grid,
+) !default;
+
+@each $helper in $d-helpers {
+    .d-#{$helper} {display: $helper;}
+    @each $breakpoint, $size in $grid-breakpoints {
+        @media screen and (min-width:#{$size}){
+            .d-#{$breakpoint}-#{$helper} {display: $helper;}
+        }
+    }
+}
+
+// Rounded helpers
+$default-round : 1rem !default;
+$rounds : (
+  0: 0,
+  1: $default-round * .25,
+  2: $default-round * .5,
+  3: $default-round,
+  4: $default-round * 1.5,
+  5: $default-round * 3,
+) !default;
+
+@for $i from 0 through 5 {
+    .round-#{$i} {
+        --radius: #{map-get($rounds, $i)};
+    }
+}
+.round-circle {
+    --radius: 50%;
+}
