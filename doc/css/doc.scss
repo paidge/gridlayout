@@ -80,7 +80,7 @@ aside nav {
         border: 1px solid rgba(86,61,124,0.2);
     }
     &:not([class*=bg-]) {
-        --bg-color: #e6e2eb;
+        background-color: #e6e2eb;
     }
 }
 
@@ -110,6 +110,6 @@ footer {
         max-height: 20px;
     }
     min-height: 50px;
-    --bg-color: #dbdbdb;
+    background-color: #dbdbdb;
     padding: 1rem 0;
 }

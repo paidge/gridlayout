@@ -11,11 +11,11 @@
             --#{$name}: #{$color};
         }
         --inv-primary: #{a11y-color($primary)};
+        --hover-primary: #{darken($primary,15%)};
         @each $name, $color in $theme-colors {
             --#{$name}: #{$color};
         }
     }
-    --bg-color: #{$white};
 }
 
 *, ::before, ::after {
@@ -23,7 +23,6 @@
 }
 
 *{
-    background-color: var(--bg-color);
     border-radius: var(--radius);
     font-family: var(--font);
 }
@@ -32,7 +31,6 @@ html, body {
     color : var(--default-font-color);
     margin: 0;
     scroll-behavior: smooth;
-    line-height: 1.5;
 }
 
 // Container
@@ -66,12 +64,14 @@ html, body {
     }
 }
 
-@for $i from 1 through ($nb_columns - 1) {
+@for $i from 1 through ($nb_columns) {
     .col-#{$i} {
         grid-column: auto / span $i;
     }
-    .grid .start-#{$i} {
-        grid-column-start: $i;
+    @if $i < $nb_columns {
+        .grid .start-#{$i} {
+            grid-column-start: $i;
+        }
     }
 }
 

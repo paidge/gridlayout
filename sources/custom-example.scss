@@ -27,10 +27,10 @@ $border-radius:0;
 .myClass {
     @extend .d-grid;
     --radius: .5rem;
-    --bg-color: #{$indigo-200};
+    background-color: #{$indigo-200};
     border-color: $primary;
     div:first-of-type {
         color: $myvar;
-        grid-row: auto / span 2;
+        grid-row: auto / span 2
     }
 }

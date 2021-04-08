@@ -1,5 +1,5 @@
 %btn {
-    --bg-color: hsla(0,0%,100%,.3);
+    background-color: hsla(0,0%,100%,.3);
     --radius: 9999px;
     color: var(--primary);
     padding:0;
@@ -31,7 +31,7 @@
         }
     }
     span:first-of-type {
-        --bg-color: transparent;
+        background-color: transparent;
         padding: 15px 25px;
         position: relative;
         z-index: 10;
@@ -64,7 +64,7 @@
         }
     }
     span:last-of-type {
-        --bg-color: #{$bg};
+        background-color: #{$bg};
         color: $arrow;
     }
 }

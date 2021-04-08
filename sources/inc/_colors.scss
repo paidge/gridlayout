@@ -11,6 +11,7 @@
     .#{$name} {
         --primary:var(--#{$name});
         --inv-primary: #{a11y-color($color)};
+        --hover-primary: #{darken($color,15%)};
         --focus-shadow: #{rgba(desaturate($color,10%),.25)};
         --border-color: var(--#{$name});
         color: var(--primary);
@@ -19,7 +20,7 @@
         color: var(--#{$name});
     }
     .bg-#{$name} {
-        --bg-color: var(--#{$name});
+        background-color: var(--#{$name});
     }
     .border-#{$name} {
         border: 1px solid var(--#{$name});
@@ -36,6 +37,7 @@
         .#{$name} {
             --primary:var(--#{$name});
             --inv-primary: #{a11y-color($color)};
+            --hover-primary: #{darken($color,15%)};
             --focus-shadow: #{rgba(desaturate($color,10%),.25)};
             --border-color: var(--#{$name});
             color: var(--primary);
@@ -44,7 +46,7 @@
             color: var(--#{$name});
         }
         .bg-#{$name} {
-            --bg-color: var(--#{$name});
+            background-color: var(--#{$name});
         }
         .border-#{$name} {
             border: 1px solid var(--#{$name});

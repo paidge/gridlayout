@@ -4,7 +4,7 @@
 }
 .img-thumbnail{
     @extend .img-fluid;
-    --bg-color: #{$light};
+    background-color: #{$light};
     --radius: #{$img-thumbnail-radius};
     padding: .25rem;
     border:1px solid $gray-300;

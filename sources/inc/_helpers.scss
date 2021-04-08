@@ -10,8 +10,10 @@ $d-helpers: (
 
 @each $helper in $d-helpers {
     .d-#{$helper} {display: $helper;}
-    @each $breakpoint, $size in $grid-breakpoints {
-        @media screen and (min-width:#{$size}){
+}
+@each $breakpoint, $size in $grid-breakpoints {
+    @media screen and (min-width:#{$size}){
+        @each $helper in $d-helpers {
             .d-#{$breakpoint}-#{$helper} {display: $helper;}
         }
     }
