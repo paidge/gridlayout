@@ -36,7 +36,7 @@
                 <h2>Overview</h2>
                 <p>GridLayout is a light-weight CSS library to theme and build responsive websites with new CSS components (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">CSS Grid</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank">CSS Custom properties</a>) and <a href="https://sass-lang.com" target="_blank">Sass</a>. Two compressed CSS files are provided :</p>
                 <ul>
-                    <li>css/gridlayout-full.min.css (25ko)</li>
+                    <li>css/gridlayout-full.min.css (20ko)</li>
                     <li>css/gridlayout-grid-only.min.css (8ko)</li>
                 </ul>
                 <p>Just import the one you want to use in your project :</p>
@@ -95,7 +95,7 @@
             </section>
             <section id="containers">
                 <h2>Containers</h2>
-                <p>Containers are usefull to wrap your content. They apply a padding stored in a CSS Custom Property called <code>--container-padding</code>. Here are the two classes :</p>
+                <p>Containers are usefull to wrap your content. They just apply a padding. Here are the two classes :</p>
                 <ul>
                     <li><code>.container</code> (is a responsive, fixed-width container, meaning its max-width changes at each breakpoint)</li>
                     <li><code>.container-fluid</code> (for a full-width container)</li>
@@ -103,17 +103,16 @@
             </section>
             <section id="grid">
                 <h2>The grid</h2>
-                <p>Use the <code>.grid</code> class to get a grid composed of 12 columns. All its children are 12 columns width and have a padding defined by the CSS Custom Property called <code>--col-padding</code>.</p>
+                <p>Use the <code>.grid</code> class to get a grid composed of 12 columns. All its children are 12 columns width by default.</p>
             </section>
             <section id="columns">
                 <h2>Columns</h2>
                 <p>The children of the <code>.grid</code> wrapper are 12 columns width by default. You can define the width for each column with these responsive classes :</p>
                 <ul>
                     <li><code>.col-{size}</code></li>
-                    <li><code>.col-{breakpoint}</code></li>
                     <li><code>.col-{breakpoint}-{size}</code></li>
                 </ul>
-                <p><code>{size}</code> is between 1 and 11.</p>
+                <p><code>{size}</code> is between 1 and 12.</p>
                 <div class="grid example">
                     <h3>h3 Heading</h3>
                     <div class="col-md-5">.col-md-5</div>
@@ -141,7 +140,7 @@
             </section>
             <section id="offset">
                 <h2>Offset</h2>
-                <p>You can offset columns by using the <code>.start-{position}</code> and the <code>.start-{breakpoint}-{position}</code> classes. <code>{position}</code> is between 1 and 11.</p>
+                <p>You can offset columns by using the <code>.start-{position}</code> and the <code>.start-{breakpoint}-{position}</code> classes. <code>{position}</code> is between 1 and 12.</p>
                 <div class="grid example">
                     <div class="col-md-4">.col-md-4</div>
                     <div class="col-md-4 start-md-7">.col-md-4.start-md-7</div>

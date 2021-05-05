@@ -56,15 +56,12 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   &:focus {
     &::-moz-range-thumb {
       border-color: var(--primary);
-      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
     &::-webkit-slider-thumb {
       border-color: var(--primary);
-      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
     &::-ms-thumb {
       border-color: var(--primary);
-      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
 
     &::-webkit-slider-runnable-track {

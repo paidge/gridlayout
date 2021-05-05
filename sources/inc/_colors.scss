@@ -1,19 +1,36 @@
 .border {
     border: 1px solid var(--border-color);
+    
+    &-top {
+        border-top: 1px solid var(--border-color);
+    }
+
+    &-right {
+        border-right: 1px solid var(--border-color);
+    }
+
+    &-left {
+        border-left: 1px solid var(--border-color);
+    }
+
+    &-bottom {
+        border-bottom: 1px solid var(--border-color);
+    }
 }
+
 @for $i from 2 through 5 {
     .border-#{$i} {
-        border: #{$i*1px} solid var(--border-color);
+        border-width: #{$i*1px};
     }
 }
 
 @each $name, $color in $main-colors {
     .#{$name} {
         --primary:var(--#{$name});
-        --inv-primary: #{a11y-color($color)};
-        --hover-primary: #{darken($color,15%)};
+        --light-primary: #{tint-color($color,15%)};
+        --dark-primary: #{shade-color($color,15%)};
         --focus-shadow: #{rgba(desaturate($color,10%),.25)};
-        --border-color: var(--#{$name});
+        --border-color: var(--primary);
         color: var(--primary);
     }
     .text-#{$name} {
@@ -23,12 +40,7 @@
         background-color: var(--#{$name});
     }
     .border-#{$name} {
-        border: 1px solid var(--#{$name});
-    }
-    @for $i from 2 through 5 {
-        .border-#{$name}-#{$i} {
-            border: #{$i*1px} solid var(--#{$name});
-        }
+        --border-color: var(--#{$name});
     }
 }
 
@@ -36,10 +48,10 @@
     @each $name, $color in $theme-colors {
         .#{$name} {
             --primary:var(--#{$name});
-            --inv-primary: #{a11y-color($color)};
-            --hover-primary: #{darken($color,15%)};
+            --light-primary: #{tint-color($color,15%)};
+            --dark-primary: #{shade-color($color,15%)};
             --focus-shadow: #{rgba(desaturate($color,10%),.25)};
-            --border-color: var(--#{$name});
+            --border-color: var(--primary);
             color: var(--primary);
         }
         .text-#{$name} {
@@ -49,12 +61,11 @@
             background-color: var(--#{$name});
         }
         .border-#{$name} {
-            border: 1px solid var(--#{$name});
-        }
-        @for $i from 2 through 5 {
-            .border-#{$name}-#{$i} {
-                border: #{$i*1px} solid var(--#{$name});
-            }
+            --border-color: var(--#{$name});
         }
     }
+}
+
+.border-0 {
+    border: none;
 }

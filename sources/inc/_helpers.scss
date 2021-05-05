@@ -1,3 +1,5 @@
+@use 'sass:string';
+
 // Display helpers
 
 $d-helpers: (
@@ -32,9 +34,54 @@ $rounds : (
 
 @for $i from 0 through 5 {
     .round-#{$i} {
-        --radius: #{map-get($rounds, $i)};
+        border-radius: #{map-get($rounds, $i)};
     }
 }
 .round-circle {
-    --radius: 50%;
+    border-radius: 50%;
+}
+
+// Spacing helpers
+$default-space : 1rem !default;
+$spaces : (
+  0: 0,
+  1: $default-space * .25,
+  2: $default-space * .5,
+  3: $default-space,
+  4: $default-space * 1.5,
+  5: $default-space * 3,
+) !default;
+
+$properties: "margin", "padding";
+
+@each $prop in $properties {
+    $letter: string.slice($prop, 1, 1);
+
+    @for $i from 0 through 5 {
+        .#{$letter}-#{$i}, .#{$letter}x-#{$i}, .#{$letter}l-#{$i} {
+            #{$prop}-left: #{map-get($spaces, $i)};
+        }
+    
+        .#{$letter}-#{$i}, .#{$letter}x-#{$i}, .#{$letter}r-#{$i} {
+            #{$prop}-right: #{map-get($spaces, $i)};
+        }
+    
+        .#{$letter}-#{$i}, .#{$letter}y-#{$i}, .#{$letter}t-#{$i} {
+            #{$prop}-top: #{map-get($spaces, $i)};
+        }
+    
+        .#{$letter}-#{$i}, .#{$letter}y-#{$i}, .#{$letter}b-#{$i} {
+            #{$prop}-bottom: #{map-get($spaces, $i)};
+        }
+    }
+}
+
+.m-auto, .mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.m-auto, .my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
 }

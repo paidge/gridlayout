@@ -4,8 +4,13 @@
     line-height: 1.5;
 }
 
-@import "./forms/button-slide";
 @import "./forms/input-range";
+
+textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid $gray-400;
+}
 
 button, input, optgroup, select, textarea {
   font-family: inherit;
@@ -18,17 +23,15 @@ button, input, optgroup, select, textarea {
   outline: 0;
 }
 
-form p {
+form p small {
     margin-top: .25rem;
-    font-size: .875em;
     padding: .25rem;
     color: $gray-600;
-  }
+}
 
-input:not([type=range]), button, .btn, select {
+input:not([type=range]), button, .btn, select, textarea {
     &:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 .25rem var(--focus-shadow);
     }
 }
 
@@ -59,7 +62,7 @@ input {
     bottom: 1px;
   }
   &[type=radio] {
-    --radius: 50%;
+    border-radius: 50%;
   }
   &:checked {
     &[type=checkbox] {
@@ -75,16 +78,16 @@ input {
   }
 }
 
-select, button, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+select, button, .btn, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-button:not([class*="btn-slide"]) {
+button, .btn {
   background-color: var(--primary);
-  opacity: .8;
-  color: var(--inv-primary);
+  text-decoration: none;
+  color: var(--light);
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
@@ -92,7 +95,7 @@ button:not([class*="btn-slide"]) {
   transition: all ease-in-out .2s;
   box-shadow: 1px 1px 3px $gray-600;
   &:hover, &:focus {
-    opacity: 1;
+    background-color: var(--dark-primary);
     box-shadow: 3px 3px 3px $gray-600;
   }
 }

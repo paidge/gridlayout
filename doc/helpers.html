@@ -43,12 +43,12 @@
             <section id="images">
                 <h2>Images</h2>
                 <p>The library provides two responsive classes : <code>.img-fluid</code> and <code>.img-thumbnail</code>. The second extends the first one (max-width : 100% and height : auto).</p>
-                <div class="grid">
+                <div class="grid g-5">
                     <div class="col-md-6"><img src="https://picsum.photos/500/300" class="img-fluid"></div>
                     <div class="col-md-6"><img src="https://picsum.photos/660/400" class="img-thumbnail"></div>
                 </div>
                 <iframe tabindex=-1
-                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-fluid%2522%253E%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-thumbnail%2522%253E%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520g-5%2522%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-fluid%2522%253E%253C%252Fdiv%253E%250A%2509%253Cdiv%2520class%253D%2522col-md-6%2522%253E%253Cimg%2520src%253D%2522...%2522%2520class%253D%2522img-thumbnail%2522%253E%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
                 style="height: 265px;"
                 sandbox="allow-scripts allow-same-origin">
               </iframe>              
@@ -57,17 +57,27 @@
                 <h2>Display</h2>
                 <p>The libray provides the following classes : </p>
                 <ul>
-                    <li><code>.d-none</code></li>
-                    <li><code>.d-block</code></li>
-                    <li><code>.d-inline-block</code></li>
-                    <li><code>.d-flex</code></li>
-                    <li><code>.d-grid</code></li>
+                    <li><code>.d-{display}</code></li>
+                    <li><code>.d-{breakpoint}-{display}</code></li>
+                    <li><code>.m-auto, .mx-auto, my-auto</code></li>
                 </ul>
+                <p>{display} is a value amongst [none, block, inline-block, flex, grid].</p>
+            </section>
+            <section id="spacing">
+                <h2>Spacing</h2>
+                <p>The library provides the following classes : </p>
+                <ul>
+                    <li><code>.{type}-{size}</code></li>
+                    <li><code>.{type}{sides}-{size}</code></li>
+                </ul>
+                <p>{type} is a value amongst [p, m] corresponding to padding and margin.</p>
+                <p>{size} is a number between 0 and 5.</p>
+                <p>{sides} is a value amongst [x, y, t, b, r, l] corresponding to [horizontal, vertical, op, bottom, righ, left].</p>
             </section>
             <section id="radius">
                 <h2>Border-radius</h2>
                 <p>You can use <code>.round-circle</code> and <code>.round-{size}</code> classes to apply a border-radius. <code>{size}</code> is between 0 and 5.</p>
-                <div class="grid">
+                <div class="grid example">
                     <div class="col-1 round-circle bg-theme2">.round-circle</div>
                     <div class="col-5 round-4 start-3 bg-theme1">.round-4</div>
                 </div>
@@ -215,17 +225,7 @@
                     src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%253Cbutton%2520type%253D%2522submit%2522%253ESubmit%253C%252Fbutton%253E%253C%252Fdiv%253E"
                     style="height: 217px;"
                     sandbox="allow-scripts allow-same-origin">
-                    </iframe>
-                    <div>
-                        <button class="btn-slide">
-                            <span>.btn-slide</span><span>➜</span>
-                        </button>
-                    </div>
-                    <iframe tabindex=-1
-                    src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%253E%250A%2509%253Cbutton%2520class%253D%2522btn-slide%2522%253E%250A%2509%2509%253Cspan%253E.btn-slide%253C%252Fspan%253E%253Cspan%253E%25E2%259E%259C%253C%252Fspan%253E%250A%2509%253C%252Fbutton%253E%250A%253C%252Fdiv%253E"
-                    style="height: 302px;"
-                    sandbox="allow-scripts allow-same-origin">
-                  </iframe>                  
+                    </iframe>             
                 </form>
             </section>
         </main>
@@ -236,6 +236,7 @@
                     <li><a href="#headings">Headings</a></li>
                     <li><a href="#images">Images</a></li>
                     <li><a href="#display">Display</a></li>
+                    <li><a href="#spacing">Spacing</a></li>
                     <li><a href="#radius">Border-radius</a></li>
                     <li><a href="#tables">Tables</a></li>
                     <li><a href="#forms">Forms</a></li>

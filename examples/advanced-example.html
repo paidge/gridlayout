@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/gridlayout-full.min.css">
     <title>Avanced example</title>
+    <style>
+        .grid > *:not(img) {
+            padding: .5rem;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Avanced example</h1>
         <div class="grid g-3">
-            <header class="col-xxl-10 start-xxl-2 bg-dark text-light"><h2>Header</h2></header>
+            <header class="col-xxl-10 start-xxl-2 bg-dark text-light row-2"><h2>Header</h2></header>
             <aside class="col-md-3 bg-theme4">
                 <div class="bg-theme2">
                     <h2>Aside 1</h2>
@@ -128,12 +133,7 @@
                             </select>
                         </div>
                         <div class="d-flex" style="justify-content: space-around;">
-                            <button type="submit" class="btn-slide">
-                                <span>Button</span><span>➜</span>
-                            </button>
-                            <a href="#" class="btn-slide">
-                                <span>Link</span><span>➜</span>
-                            </a>
+                            <button type="submit">Button</button>
                         </div>
                     </form>
                 </section>

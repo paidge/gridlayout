@@ -5,8 +5,6 @@ $use-theme-colors: true !default;
 $nb_columns: 12 !default;
 $container-width-coef: .95 !default;
 $container-padding: 1rem !default;
-$col-padding: .5rem !default;
-$border-radius: .25rem !default;
 $standard-gap: 1rem !default;
 $gutters : (
   1: $standard-gap * .25,
@@ -26,7 +24,7 @@ $grid-breakpoints: (
 ) !default;
 
 // Images
-$img-thumbnail-radius: $border-radius !default;
+$img-thumbnail-radius: .25rem !default;
 
 // Colors
 $white:    #fff !default;
@@ -210,4 +208,4 @@ $font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"
 
 $link-decoration: none !default;
 
-$headings-margin: 0 0 .5rem !default;
+$headings-margin: 0 !default;

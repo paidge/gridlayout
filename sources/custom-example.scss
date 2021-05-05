@@ -8,7 +8,6 @@ $theme-colors: (
   "myColor2":   rgb(187, 20, 20),
   "myColor3":   rgb(78, 184, 78)
 );
-$border-radius:0;
 
 @import './inc/variables';
 @import './inc/functions';
@@ -26,7 +25,6 @@ $border-radius:0;
 
 .myClass {
     @extend .d-grid;
-    --radius: .5rem;
     background-color: #{$indigo-200};
     border-color: $primary;
     div:first-of-type {

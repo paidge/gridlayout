@@ -80,14 +80,16 @@
             </section>
             <section id="borders">
                 <h2>Borders</h2>
-                <p>Use the <code>.border</code> and the <code>.border-{size}</code> classes to apply a border whose the color is defined by the <code>--border-color</code> CSS component.</p>
-                <p>Use the <code>border-{color}</code> and the <code>border-{color}-{size}</code> classes to apply a border with the appropriate color.</p>
+                <p>Use the <code>.border</code> or the <code>.border-{position}</code> classes to apply a border.</p>
+                <p>Use the <code>border-{color}</code> classes to change the border-color.</p>
+                <p>Use the <code>border-{size}</code> classes to change the border-width.</p>
+                <p><code>{position}</code> is a value amongst [top, bottom, left, right].</p>
                 <p><code>{size}</code> is between 2 and 5.</p>
                 <div class="grid example">
-                    <div class="border-theme4-3">.border-theme4-3</div>
+                    <div class=" border border-3 border-theme4">.border.border-3.border-theme4</div>
                 </div>
                 <iframe tabindex=-1
-                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522border-theme4-3%2522%253E.border-theme4-3%253C%252Fdiv%253E"
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522border%2520border-3%2520border-theme4%2522%253E.border.border-3.border-theme4%253C%252Fdiv%253E"
                 style="height: 207px;"
                 sandbox="allow-scripts allow-same-origin">
                 </iframe>  
@@ -95,7 +97,7 @@
             <section id="background">
                 <h2>Background</h2>
                 <p>You can use the <code>.bg-{color}</code> classes.</p>
-                <div class="grid">
+                <div class="grid example">
                     <div class="bg-theme2">.bg-theme2</div>
                 </div>
                 <iframe tabindex=-1
@@ -108,10 +110,10 @@
                 <h2>Themes</h2>
                 <p>The <code>.{color}</code> classes are equivalent to the <code>.text-{color}</code> classes. In addition, they overload the <code>--primary</code>, the <code>--inv-primary</code>, the <code>--focus-shadow</code> and the <code>--border-color</code> CSS components with the appropriate colors. They are usefull for wrappers.</p>
                 <div class="grid example theme4">
-                    <div class="border-1 text-primary">.border-1.text-primary</div>
+                    <div class="border-top border-3">.border-top.border-3</div>
                 </div>
                 <iframe tabindex=-1
-                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520theme4%2522%253E%250A%2509%253Cdiv%2520class%253D%2522border-1%2520text-primary%2522%253E.border-1.text-primary%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
+                src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=cobalt&wt=none&l=htmlmixed&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253Cdiv%2520class%253D%2522grid%2520theme4%2522%253E%250A%2509%253Cdiv%2520class%253D%2522border-top%2520border-3%2522%253E.border-top.border-3%253C%252Fdiv%253E%250A%253C%252Fdiv%253E"
                 style="height: 250px;"
                 sandbox="allow-scripts allow-same-origin">
                 </iframe>  

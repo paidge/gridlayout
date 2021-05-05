@@ -1,41 +1,35 @@
 :root {
-    --col-padding: #{$col-padding};
-    --container-padding: #{$container-padding};
-    --radius: #{$border-radius};
     --font: #{$font-family};
     --default-font-color: #{$default-font-color};
+    --border-color: #{$gray-300};
     @if $use-theme-colors {
         --focus-shadow: #{rgba(desaturate($primary,10%),.25)};
-        --border-color: var(--default-font-color);
+        --light-primary: #{tint-color($primary,15%)};
+        --dark-primary: #{shade-color($primary,15%)};
         @each $name, $color in $main-colors {
             --#{$name}: #{$color};
         }
-        --inv-primary: #{a11y-color($primary)};
-        --hover-primary: #{darken($primary,15%)};
         @each $name, $color in $theme-colors {
             --#{$name}: #{$color};
         }
     }
 }
 
-*, ::before, ::after {
+html, body {
+    color : var(--default-font-color);
+    font-family: var(--font);
+    margin: 0;
+    scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
-*{
-    border-radius: var(--radius);
-    font-family: var(--font);
-}
-
-html, body {
-    color : var(--default-font-color);
-    margin: 0;
-    scroll-behavior: smooth;
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 // Container
 .container, .container-fluid {
-    padding: 0 var(--container-padding);
+    padding: 0 $container-padding;
     margin: 0 auto;
 }
 
@@ -45,7 +39,6 @@ html, body {
     grid-template-rows: min-content;
     grid-template-columns: repeat($nb_columns, 1fr);
     & > * {
-        padding: var(--col-padding);
         grid-column: 1 / -1;
     }
 }
@@ -64,14 +57,12 @@ html, body {
     }
 }
 
-@for $i from 1 through ($nb_columns) {
+@for $i from 1 through $nb_columns {
     .col-#{$i} {
         grid-column: auto / span $i;
     }
-    @if $i < $nb_columns {
-        .grid .start-#{$i} {
-            grid-column-start: $i;
-        }
+    .grid .start-#{$i} {
+        grid-column-start: $i;
     }
 }
 
@@ -80,10 +71,7 @@ html, body {
         .container {
             max-width: $size*$container-width-coef;
         }
-        .col-#{$breakpoint} {
-            grid-column: 1 / -1;
-        }
-        @for $i from 1 through ($nb_columns - 1) {
+        @for $i from 1 through $nb_columns {
             .col-#{$breakpoint}-#{$i} {
                 grid-column: auto / span $i;
             }
